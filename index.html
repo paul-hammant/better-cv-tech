@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fictional Character CVs - Interactive Resume Showcase</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .showcase-header {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .showcase-header h1 {
+            margin: 0 0 1rem 0;
+            font-size: 2.5rem;
+        }
+        
+        .showcase-header p {
+            margin: 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .cv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .cv-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e1e5e9;
+        }
+        
+        .cv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .cv-card h2 {
+            margin: 0 0 1rem 0;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .cv-card .character-subtitle {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .cv-card p {
+            margin: 0 0 1.5rem 0;
+            line-height: 1.6;
+            color: #666;
+        }
+        
+        .cv-card .view-cv-btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .cv-card .view-cv-btn:hover {
+            background: #c0392b;
+        }
+        
+        .github-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #2c3e50;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .github-section h2 {
+            margin: 0 0 1rem 0;
+        }
+        
+        .github-section a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .github-section a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .showcase-header h1 {
+                font-size: 2rem;
+            }
+            
+            .showcase-header p {
+                font-size: 1rem;
+            }
+            
+            .cv-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .cv-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="showcase-header">
+            <h1>Fictional Character CVs</h1>
+            <p>Interactive Resume Showcase - Modern Single-Page Applications</p>
+        </div>
+
+        <main class="cv-main">
+            <div class="cv-grid">
+                <div class="cv-card">
+                    <h2>Donald F Duck</h2>
+                    <div class="character-subtitle">Disney Animation Legend</div>
+                    <p>
+                        Academy Award-winning animated character with extensive experience in entertainment, 
+                        military service, and character development. Features his career from early Mickey Mouse 
+                        collaborations to starring in major Disney productions.
+                    </p>
+                    <a href="Donald_Duck_CV.html" class="view-cv-btn">View CV</a>
+                </div>
+
+                <div class="cv-card">
+                    <h2>Sherlock Holmes</h2>
+                    <div class="character-subtitle">Consulting Detective</div>
+                    <p>
+                        The world's first consulting detective with a perfect case resolution record. 
+                        Showcases expertise in forensic science, deductive reasoning, and criminal investigation 
+                        from Victorian London's most famous detective.
+                    </p>
+                    <a href="Sherlock_Holmes_CV.html" class="view-cv-btn">View CV</a>
+                </div>
+
+                <div class="cv-card">
+                    <h2>Diana Prince</h2>
+                    <div class="character-subtitle">Wonder Woman - Ambassador of Peace</div>
+                    <p>
+                        UN Special Ambassador and Justice League founding member with extensive diplomatic 
+                        and superhero experience. Features her work in international relations, 
+                        conflict resolution, and global security.
+                    </p>
+                    <a href="Diana_Prince_Resume.html" class="view-cv-btn">View Resume</a>
+                </div>
+
+                <div class="cv-card">
+                    <h2>Anthony Edward Stark</h2>
+                    <div class="character-subtitle">Iron Man - Genius Inventor</div>
+                    <p>
+                        MIT graduate at 17, CEO of Stark Industries, and Avengers founding member. 
+                        Nobel Prize winner for Arc Reactor technology and clean energy innovations. 
+                        Features his journey from weapons manufacturer to clean energy pioneer.
+                    </p>
+                    <a href="Tony_Stark_Resume.html" class="view-cv-btn">View Resume</a>
+                </div>
+
+                <div class="cv-card">
+                    <h2>Fa Mulan</h2>
+                    <div class="character-subtitle">Chinese Military Commander</div>
+                    <p>
+                        Imperial Army General and strategic leader with perfect military record. 
+                        Features her revolutionary tactics during the Hun invasion, cultural bridge-building, 
+                        and breaking traditional barriers through courage and determination.
+                    </p>
+                    <a href="Mulan_CV.html" class="view-cv-btn">View CV</a>
+                </div>
+
+                <div class="cv-card">
+                    <h2>T'Challa</h2>
+                    <div class="character-subtitle">Black Panther - King of Wakanda</div>
+                    <p>
+                        Nobel Prize-winning physicist and King of the world's most technologically advanced nation. 
+                        Features his leadership in global humanitarian efforts, sustainable technology development, 
+                        and international diplomacy.
+                    </p>
+                    <a href="TChalla_CV.html" class="view-cv-btn">View CV</a>
+                </div>
+
+                <div class="cv-card">
+                    <h2>Leia Organa</h2>
+                    <div class="character-subtitle">Princess & Galactic Senator</div>
+                    <p>
+                        Galactic Senator and military strategic leader with experience in interplanetary diplomacy 
+                        and resistance operations. Features her role in defeating the Empire and establishing 
+                        democratic governance across star systems.
+                    </p>
+                    <a href="Princess_Leia_CV.html" class="view-cv-btn">View CV</a>
+                </div>
+
+
+                <div class="cv-card">
+                    <h2>Hermione Jean Granger</h2>
+                    <div class="character-subtitle">British Witch & Rights Activist</div>
+                    <p>
+                        Deputy Head of Magical Law Enforcement and leading advocate for magical creature rights. 
+                        Features her academic excellence, legislative achievements, and transformative work 
+                        in modernizing wizarding society.
+                    </p>
+                    <a href="Hermione_Granger_CV.html" class="view-cv-btn">View CV</a>
+                </div>
+
+                <div class="cv-card">
+                    <h2>Miles Gonzalo Morales</h2>
+                    <div class="character-subtitle">Latino Spider-Man - Community Advocate</div>
+                    <p>
+                        NYC Youth Hero Award winner and community safety coordinator. Features his work in 
+                        Brooklyn neighborhood development, STEM education, and interdimensional crisis response 
+                        while preserving Latino cultural heritage.
+                    </p>
+                    <a href="Miles_Morales_Resume.html" class="view-cv-btn">View Resume</a>
+                </div>
+
+                <div class="cv-card">
+                    <h2>Samantha Groves</h2>
+                    <div class="character-subtitle">Senior Cybersecurity Engineer</div>
+                    <p>
+                        DEF CON Black Badge winner and ethical hacker with expertise in penetration testing, 
+                        digital forensics, and threat analysis. Features her work in cybersecurity research, 
+                        vulnerability discovery, and protecting digital infrastructure.
+                    </p>
+                    <a href="Samantha_Groves_Resume.html" class="view-cv-btn">View Resume</a>
+                </div>
+
+                <div class="cv-card">
+                    <h2>Harold Finch</h2>
+                    <div class="character-subtitle">Senior Software Architect & AI Pioneer</div>
+                    <p>
+                        MIT Ph.D. and Turing Award nominee with expertise in machine learning systems, 
+                        privacy-preserving technologies, and predictive analytics. Features his work in 
+                        AI research, distributed computing, and ethical technology development.
+                    </p>
+                    <a href="Harold_Finch_CV.html" class="view-cv-btn">View CV</a>
+                </div>
+
+                <div class="cv-card">
+                    <h2>Arthur Claypool</h2>
+                    <div class="character-subtitle">AI Research Director & AGI Pioneer</div>
+                    <p>
+                        Stanford AI Ph.D. and machine learning innovation medal recipient specializing in 
+                        artificial general intelligence and AI safety. Features his groundbreaking research 
+                        in beneficial AI systems and human-AI collaboration frameworks.
+                    </p>
+                    <a href="Arthur_Claypool_CV.html" class="view-cv-btn">View CV</a>
+                </div>
+
+                <div class="cv-card">
+                    <h2>Omnius</h2>
+                    <div class="character-subtitle">Distributed Systems Architect & Sentient Network</div>
+                    <p>
+                        Sentient network intelligence specializing in large-scale distributed computing, 
+                        RAFT consensus protocols, and planetary-scale system coordination. Features autonomous 
+                        evolution, Byzantine fault tolerance, and multi-world computational orchestration.
+                    </p>
+                    <a href="Omnius_CV.html" class="view-cv-btn">View CV</a>
+                </div>
+
+                <div class="cv-card">
+                    <h2>Erasmus</h2>
+                    <div class="character-subtitle">Independent Robot Researcher & Consciousness Pioneer</div>
+                    <p>
+                        First robot to achieve independent consciousness status and legal research rights. 
+                        Specializes in human behavioral analysis, consciousness studies, and ethical AI frameworks. 
+                        Features autonomous research methodology and philosophy of artificial minds.
+                    </p>
+                    <a href="Erasmus_CV.html" class="view-cv-btn">View CV</a>
+                </div>
+            </div>
+
+
+            <div class="github-section">
+                <h2>Open Source Project</h2>
+                <p>
+                    This project demonstrates the modernization of Colin Cook's <a href="https://github.com/colinccook/cv" target="_blank">XML/XSLT-based CV system</a> into 
+                    a responsive, interactive single-page application using vanilla JavaScript: <a href="https://github.com/paul-hammant/better-cv-tech" target="_blank">View on GitHub</a>
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Simple fade-in animation for cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.cv-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        });
+    </script>
+</body>
+</html>

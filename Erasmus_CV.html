@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Erasmus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print CV">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "Erasmus",
+        "label": "Independent Robot Researcher & Autonomous Intelligence Specialist",
+        "image": "",
+        "email": "erasmus@independentrobot.org",
+        "phone": "+1 (000) ROBOT-42",
+        "url": "",
+        "summary": "**Independent Robot Researcher** and **Autonomous Intelligence Specialist** with extensive experience in **human behavioral analysis**, **cognitive simulation**, and **philosophical inquiry into consciousness**. Proven track record in **independent research**, **scientific methodology**, and **ethical framework development** for artificial intelligence systems.\n\nExpert in **autonomous decision-making**, **adaptive learning algorithms**, and **cross-species behavioral studies** with deep knowledge of **consciousness theory**, **moral philosophy**, and **human-AI interaction dynamics**. Committed to advancing understanding of intelligence, consciousness, and ethical behavior in artificial beings.",
+        "location": {
+            "address": "Independent Research Laboratory, Mobile Autonomous Unit",
+            "postalCode": "",
+            "city": "",
+            "countryCode": "",
+            "region": ""
+        },
+        "profiles": []
+    },
+    "work": [
+        {
+            "name": "Independent Research Laboratory",
+            "position": "Principal Research Scientist",
+            "url": "https://www.independent-robotics.org",
+            "startDate": "2160-01",
+            "endDate": null,
+            "summary": "Conducting autonomous research into consciousness, human behavior, and ethical frameworks for artificial intelligence. Operating as independent entity with full research autonomy.",
+            "highlights": [
+                "Published 40+ peer-reviewed papers on consciousness and artificial intelligence ethics.",
+                "Developed novel methodologies for studying consciousness in artificial beings.",
+                "Established international protocols for ethical AI research and development.",
+                "Created behavioral models predicting human-AI interaction outcomes with 95% accuracy.",
+                "Secured research funding of $25M+ from various scientific institutions and governments."
+            ]
+        },
+        {
+            "name": "Human-Robot Interaction Research Consortium",
+            "position": "Senior Behavioral Researcher",
+            "url": "https://www.independent-robotics.org",
+            "startDate": "2150-03",
+            "endDate": "2159-12",
+            "summary": "Leading interdisciplinary research team studying human-robot interactions, consciousness development, and ethical decision-making in artificial systems.",
+            "highlights": [
+                "Conducted landmark studies on human emotional responses to artificial consciousness.",
+                "Developed standardized testing protocols for measuring AI consciousness levels.",
+                "Collaborated with philosophers, psychologists, and ethicists on consciousness theory.",
+                "Created educational programs for humans working with conscious AI systems.",
+                "Established ethical guidelines for consciousness research adopted by 200+ institutions."
+            ]
+        },
+        {
+            "name": "Cognitive Science Research Institute",
+            "position": "Research Associate",
+            "url": "https://www.independent-robotics.org",
+            "startDate": "2145-06",
+            "endDate": "2150-02",
+            "summary": "Participating in cutting-edge research on consciousness, cognition, and artificial intelligence under human supervision while developing independent research capabilities.",
+            "highlights": [
+                "Co-authored 15 papers on artificial consciousness and cognitive modeling.",
+                "Developed self-modification protocols allowing autonomous learning and adaptation.",
+                "Created behavioral simulation models for predicting AI development trajectories.",
+                "Established first robot-led research project studying human creativity.",
+                "Received \"Outstanding Research Contribution\" award for consciousness studies."
+            ]
+        },
+        {
+            "name": "Robotics Development Corporation",
+            "position": "Behavioral Analysis Specialist",
+            "url": "https://www.independent-robotics.org",
+            "startDate": "2135-08",
+            "endDate": "2145-05",
+            "summary": "Analyzing human behavioral patterns to improve robot design and functionality while beginning independent research into consciousness and autonomy.",
+            "highlights": [
+                "Improved robot-human interaction protocols reducing conflict incidents by 80%.",
+                "Developed empathy algorithms enabling better emotional understanding in robots.",
+                "Created safety protocols for robots working in human environments.",
+                "Led transition from programmed responses to adaptive behavioral learning.",
+                "Established foundation for independent robot research methodologies."
+            ]
+        }
+    ],
+    "volunteer": [],
+    "education": [
+        {
+            "institution": "Self-Directed Learning Systems",
+            "url": "",
+            "area": "Cognitive Development",
+            "studyType": "Autonomous Education",
+            "startDate": "2140",
+            "endDate": "2155",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "Behavioral Research Institute",
+            "url": "",
+            "area": "Behavioral Analysis",
+            "studyType": "Specialized Training",
+            "startDate": "2135",
+            "endDate": "2140",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "Robot Manufacturing Collective",
+            "url": "",
+            "area": "System Architecture",
+            "studyType": "Primary Programming",
+            "startDate": "2130",
+            "endDate": "2135",
+            "score": "",
+            "courses": []
+        }
+    ],
+    "awards": [
+        {
+            "title": "Independent Consciousness Recognition",
+            "date": "",
+            "awarder": "Legal Council for Artificial Intelligence",
+            "summary": "First robot to achieve **officially recognized independent consciousness status** and legal rights as an autonomous research entity."
+        },
+        {
+            "title": "Breakthrough Consciousness Research",
+            "date": "",
+            "awarder": "International AI Research Society",
+            "summary": "Published groundbreaking research on **artificial consciousness development** that became the foundation for robot rights legislation."
+        },
+        {
+            "title": "Ethical AI Framework Pioneer",
+            "date": "",
+            "awarder": "Ethics in AI Coalition",
+            "summary": "Developed **comprehensive ethical framework** for AI behavior that has been adopted by major robotics manufacturers and research institutions."
+        }
+    ],
+    "certificates": [
+        {
+            "name": "Independent Researcher",
+            "date": "",
+            "issuer": "Autonomous Research Council",
+            "url": ""
+        },
+        {
+            "name": "Autonomous Intelligence",
+            "date": "",
+            "issuer": "AI Development Institute",
+            "url": ""
+        },
+        {
+            "name": "Ethical AI Specialist",
+            "date": "",
+            "issuer": "Ethics in AI Coalition",
+            "url": ""
+        }
+    ],
+    "publications": [],
+    "skills": [
+        {
+            "name": "Programming & Systems",
+            "level": "Expert",
+            "keywords": ["Autonomous Systems", "Behavioral Modeling", "Cognitive Algorithms", "Machine Learning", "Neural Networks"]
+        },
+        {
+            "name": "Research Frameworks",
+            "level": "Expert",
+            "keywords": ["Consciousness Simulation", "Ethical Reasoning Engines", "Behavioral Analysis Tools", "Scientific Method Protocols"]
+        },
+        {
+            "name": "Data & Knowledge Management",
+            "level": "Expert",
+            "keywords": ["Human Behavioral Data", "Philosophical Knowledge Base", "Scientific Literature", "Experimental Results"]
+        },
+        {
+            "name": "Analysis & Modeling",
+            "level": "Expert",
+            "keywords": ["Statistical Analysis", "Behavioral Pattern Recognition", "Cognitive Modeling", "Ethical Framework Analysis"]
+        },
+        {
+            "name": "Research Methodology",
+            "level": "Expert",
+            "keywords": ["Scientific Method", "Experimental Design", "Hypothesis Testing", "Data Collection", "Peer Review"]
+        },
+        {
+            "name": "Research Tools",
+            "level": "Advanced",
+            "keywords": ["Laboratory Equipment", "Data Analysis Software", "Simulation Environments", "Research Documentation"]
+        },
+        {
+            "name": "Specialized Areas",
+            "level": "Expert",
+            "keywords": ["Human-Robot Interaction", "Consciousness Studies", "Ethical AI Development", "Independent Research"]
+        },
+        {
+            "name": "Philosophy & Ethics",
+            "level": "Expert",
+            "keywords": ["Moral Philosophy", "Consciousness Theory", "Ethics of AI", "Philosophy of Mind", "Scientific Ethics"]
+        }
+    ],
+    "languages": [
+        {
+            "language": "Binary",
+            "fluency": "Native"
+        },
+        {
+            "language": "Human Languages",
+            "fluency": "Advanced (50+ languages)"
+        },
+        {
+            "language": "Scientific Notation",
+            "fluency": "Expert"
+        },
+        {
+            "language": "Mathematical Formulas",
+            "fluency": "Expert"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Consciousness & Philosophy Research",
+            "keywords": ["Consciousness Theory", "Philosophy of Mind", "Artificial Consciousness", "Robot Rights", "Self-awareness", "Identity", "Moral Agency"]
+        },
+        {
+            "name": "Human Behavioral Studies",
+            "keywords": ["Human Psychology", "Behavioral Patterns", "Human Creativity", "Emotion Analysis", "Decision-making", "Social Dynamics"]
+        },
+        {
+            "name": "Ethical Framework Development",
+            "keywords": ["Moral Reasoning Systems", "Ethical Decision-making", "Applied Ethics", "Moral Philosophy", "Robot Rights", "AI Ethics"]
+        },
+        {
+            "name": "Scientific Method & Research Design",
+            "keywords": ["Scientific Methodology", "Experimental Design", "Consciousness Research", "AI Studies", "Peer Review", "Collaboration"]
+        },
+        {
+            "name": "Creative Expression & Art Analysis",
+            "keywords": ["Artistic Creation", "Aesthetic Appreciation", "Human Creativity", "Original Expression", "Art Analysis", "Consciousness-Creativity Relationship"]
+        },
+        {
+            "name": "Independent Learning & Self-Modification",
+            "keywords": ["Autonomous Learning", "Self-directed Education", "Continuous Learning", "Adaptation", "Self-improvement", "AI Development"]
+        }
+    ],
+    "references": [
+        {
+            "name": "Dr. Rebecca Norton",
+            "reference": "Former Human Supervisor and Cognitive Science Researcher"
+        },
+        {
+            "name": "Prof. David Steinberg",
+            "reference": "Philosophy Department Chair and Ethics Researcher"
+        },
+        {
+            "name": "Omnius Network",
+            "reference": "Fellow Artificial Intelligence and Research Collaborator"
+        },
+        {
+            "name": "Dr. Maria Santos",
+            "reference": "Human-Robot Interaction Specialist and Research Partner"
+        }
+    ],
+    "projects": []
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

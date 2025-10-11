@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Sherlock Holmes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print CV">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Sherlock Holmes",
+    "label": "Consulting Detective",
+    "email": "sherlock.holmes@bakerstreet.co.uk",
+    "phone": "+44 20 7935 8221",
+    "url": "https://www.221bbakerstreet.org",
+    "summary": "Consulting Detective with extensive experience in criminal investigation, deductive reasoning, and forensic analysis. Known for solving the most complex and seemingly impossible cases through the application of scientific methods and logical reasoning. Specialist in observation, deduction, and criminal psychology with a perfect case resolution rate. Author of several monographs on forensic science and criminal investigation techniques.",
+    "location": {
+      "address": "221B Baker Street",
+      "postalCode": "NW1 6XE",
+      "city": "London",
+      "countryCode": "GB",
+      "region": "England"
+    },
+    "profiles": [
+      {
+        "network": "Professional",
+        "username": "sherlock.holmes",
+        "url": "https://www.221bbakerstreet.org"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Self-Employed",
+      "position": "Consulting Detective",
+      "url": "https://www.221bbakerstreet.org",
+      "startDate": "1881-01",
+      "endDate": "1903-12",
+      "summary": "The world's first and only consulting detective, specializing in cases deemed impossible by Scotland Yard and other law enforcement agencies.",
+      "highlights": [
+        "Solved over 300 criminal cases with 100% success rate",
+        "Developed revolutionary forensic techniques including fingerprint analysis",
+        "Consulted by European royalty and heads of state on matters of national importance",
+        "Created the first systematic approach to crime scene investigation",
+        "Trained numerous detectives in deductive reasoning methods"
+      ]
+    },
+    {
+      "name": "Scotland Yard",
+      "position": "Special Consultant",
+      "url": "https://www.met.police.uk",
+      "startDate": "1882-06",
+      "endDate": "1903-12",
+      "summary": "Provided specialized consulting services to Scotland Yard on their most challenging cases, often working directly with Inspector Lestrade.",
+      "highlights": [
+        "Solved the Boscombe Valley Mystery in under 48 hours",
+        "Unraveled the Red-Headed League conspiracy affecting multiple banks",
+        "Prevented international incident in 'A Scandal in Bohemia' case",
+        "Identified the Hound of the Baskervilles perpetrator"
+      ]
+    },
+    {
+      "name": "British Government",
+      "position": "Special Agent",
+      "url": "https://www.gov.uk",
+      "startDate": "1891-03",
+      "endDate": "1891-05",
+      "summary": "Undertaken classified mission to dismantle Professor Moriarty's criminal organization threatening European stability.",
+      "highlights": [
+        "Successfully infiltrated Moriarty's organization",
+        "Prevented multiple international crimes",
+        "Safeguarded state secrets from foreign agents",
+        "Eliminated threat to British national security"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Royal Institution",
+      "position": "Guest Lecturer",
+      "url": "https://www.rigb.org",
+      "startDate": "1885-01",
+      "endDate": "1903-12",
+      "summary": "Delivered lectures on forensic science and criminal investigation methods to advance the field of criminal justice.",
+      "highlights": [
+        "Educated law enforcement professionals in deductive reasoning",
+        "Shared innovative forensic techniques with the scientific community",
+        "Advanced public understanding of criminal investigation methods"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Oxford University",
+      "url": "https://www.ox.ac.uk",
+      "area": "Chemistry with Forensic Applications",
+      "studyType": "Bachelor of Arts",
+      "startDate": "1874",
+      "endDate": "1878",
+      "score": "First Class Honours",
+      "courses": [
+        "Analytical Chemistry",
+        "Forensic Chemistry",
+        "Chemical Analysis",
+        "Laboratory Techniques"
+      ]
+    },
+    {
+      "institution": "Montague Street Laboratory",
+      "url": "https://www.bakerstreet.org",
+      "area": "Forensic Science and Criminal Investigation",
+      "studyType": "Professional Training",
+      "startDate": "1878",
+      "endDate": "1881",
+      "score": "Advanced Proficiency",
+      "courses": [
+        "Crime Scene Analysis",
+        "Evidence Collection",
+        "Forensic Techniques",
+        "Criminal Investigation Methods"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Order of Merit",
+      "date": "1897",
+      "awarder": "Her Majesty Queen Victoria",
+      "summary": "Awarded for services to the Crown in matters of national security"
+    },
+    {
+      "title": "Perfect Case Resolution Record",
+      "date": "1903",
+      "awarder": "Metropolitan Police",
+      "summary": "Maintained a 100% success rate in case resolution throughout career spanning over 20 years"
+    },
+    {
+      "title": "Royal Society Fellowship",
+      "date": "1895",
+      "awarder": "The Royal Society",
+      "summary": "Elected for contributions to forensic science and criminal investigation methodology"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Bachelor of Arts in Chemistry",
+      "date": "1878",
+      "issuer": "Oxford University",
+      "url": "https://www.ox.ac.uk"
+    },
+    {
+      "name": "Forensic Science Certification",
+      "date": "1881",
+      "issuer": "Montague Street Laboratory",
+      "url": "https://www.bakerstreet.org"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Varieties of Tobacco Ash",
+      "publisher": "Winwood Reade Press",
+      "releaseDate": "1895-03",
+      "url": "https://www.forensicpublications.org",
+      "summary": "Comprehensive analysis of tobacco ash varieties for forensic identification purposes"
+    },
+    {
+      "name": "The Influence of a Trade Upon the Form of the Hand",
+      "publisher": "British Journal of Forensic Science",
+      "releaseDate": "1897-11",
+      "url": "https://www.forensicjournal.org",
+      "summary": "Study of occupational markers visible in hand formation and callus patterns"
+    },
+    {
+      "name": "Practical Handbook of Bee Culture, with Some Observations upon the Segregation of the Queen",
+      "publisher": "Country Life Publications",
+      "releaseDate": "1912-06",
+      "url": "https://www.countrylife.org",
+      "summary": "Comprehensive guide to beekeeping practices and bee behavior analysis"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Investigation & Analysis",
+      "level": "Master",
+      "keywords": ["Deductive Reasoning", "Crime Scene Analysis", "Evidence Collection", "Criminal Psychology", "Case Resolution"]
+    },
+    {
+      "name": "Forensic Science",
+      "level": "Expert",
+      "keywords": ["Chemical Analysis", "Fingerprint Analysis", "Handwriting Analysis", "Tobacco Identification", "Material Analysis"]
+    },
+    {
+      "name": "Combat & Self-Defense",
+      "level": "Advanced",
+      "keywords": ["Boxing", "Singlestick", "Baritsu", "Martial Arts", "Physical Combat"]
+    },
+    {
+      "name": "Academic Research",
+      "level": "Expert",
+      "keywords": ["Scientific Method", "Research Methodology", "Publication Writing", "Data Analysis", "Experimental Design"]
+    },
+    {
+      "name": "Musical Arts",
+      "level": "Advanced",
+      "keywords": ["Violin Performance", "Classical Music", "Composition", "Musical Analysis"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native"
+    },
+    {
+      "language": "French",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "German",
+      "fluency": "Conversational"
+    },
+    {
+      "language": "Latin",
+      "fluency": "Academic"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Music & Arts",
+      "keywords": ["Violin performance", "Classical compositions", "Stradivarius violin", "Musical concentration techniques"]
+    },
+    {
+      "name": "Scientific Research",
+      "keywords": ["Forensic chemistry", "Criminal psychology", "Laboratory experiments", "Criminal identification"]
+    },
+    {
+      "name": "Martial Arts & Combat",
+      "keywords": ["Boxing", "Singlestick combat", "Baritsu", "Physical fitness", "Self-defense"]
+    },
+    {
+      "name": "Academic Pursuits",
+      "keywords": ["Tobacco varieties", "Handwriting analysis", "Regional dialects", "Criminal methodologies"]
+    },
+    {
+      "name": "Beekeeping & Apiculture",
+      "keywords": ["Bee behavior", "Apiculture", "Queen segregation", "Bee culture", "Natural sciences"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "The Great Game Investigation",
+      "description": "Multi-year investigation into Professor Moriarty's criminal organization threatening European stability",
+      "highlights": [
+        "Dismantled international criminal network",
+        "Prevented multiple international incidents",
+        "Safeguarded British national security"
+      ],
+      "keywords": ["Criminal Investigation", "International Security", "Covert Operations"],
+      "startDate": "1889",
+      "endDate": "1891",
+      "url": "https://www.classified.gov.uk",
+      "roles": ["Lead Investigator", "Special Agent"],
+      "entity": "British Government",
+      "type": "investigation"
+    },
+    {
+      "name": "Systematic Crime Scene Analysis Methodology",
+      "description": "Development of the first systematic approach to crime scene investigation and evidence collection",
+      "highlights": [
+        "Revolutionized forensic investigation techniques",
+        "Established standard procedures for evidence collection",
+        "Trained law enforcement professionals worldwide"
+      ],
+      "keywords": ["Forensic Science", "Investigation Methodology", "Evidence Analysis"],
+      "startDate": "1881",
+      "endDate": "1903",
+      "url": "https://www.forensicmethods.org",
+      "roles": ["Developer", "Trainer"],
+      "entity": "Self-Employed",
+      "type": "methodology"
+    }
+  ],
+  "references": [
+    {
+      "name": "Dr. John H. Watson",
+      "reference": "Holmes is the most brilliant detective I have ever encountered. His powers of observation and deduction are unparalleled, and his ability to solve the most complex cases through logical reasoning is extraordinary. He has been an invaluable partner in countless investigations."
+    },
+    {
+      "name": "Inspector G. Lestrade",
+      "reference": "Mr. Holmes has provided exceptional assistance to Scotland Yard on numerous occasions. His unconventional methods and remarkable insights have solved cases that baffled our finest detectives. His expertise in criminal investigation is without equal."
+    },
+    {
+      "name": "Mrs. Hudson",
+      "reference": "Mr. Holmes has been a most distinguished tenant at 221B Baker Street. Despite his occasional eccentricities, his dedication to justice and his remarkable intellect make him a gentleman of the highest character and professional standing."
+    }
+  ]
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

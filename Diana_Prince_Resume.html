@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Diana Prince</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print Resume">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Diana Prince",
+    "label": "Ambassador of Peace & Superhero",
+    "email": "diana.prince@justiceleague.org",
+    "phone": "202-456-1414",
+    "url": "https://www.justiceleague.org",
+    "summary": "Ambassador of Peace and Superhero with extensive experience in international diplomacy, conflict resolution, and global security. Dedicated to protecting humanity and promoting justice, equality, and peace worldwide. Fluent in over 200 languages with deep knowledge of international law, ancient history, and modern geopolitics. Proven track record in crisis management, strategic planning, and team leadership in high-stakes environments.",
+    "location": {
+      "address": "1600 Pennsylvania Avenue NW",
+      "postalCode": "20500",
+      "city": "Washington",
+      "countryCode": "US",
+      "region": "District of Columbia"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "dianaprince",
+        "url": "https://linkedin.com/in/dianaprince"
+      },
+      {
+        "network": "UN",
+        "username": "diana-prince",
+        "url": "https://un.org/peacemakers/diana-prince"
+      },
+      {
+        "network": "State Department",
+        "username": "diana-prince",
+        "url": "https://state.gov/diplomat/diana-prince"
+      },
+      {
+        "network": "World Economic Forum",
+        "username": "diana-prince",
+        "url": "https://weforum.org/people/diana-prince"
+      },
+      {
+        "network": "Council on Foreign Relations",
+        "username": "diana-prince",
+        "url": "https://cfr.org/experts/diana-prince"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "United Nations",
+      "position": "Special Ambassador",
+      "url": "https://www.un.org",
+      "startDate": "1950-01",
+      "endDate": "",
+      "summary": "Serves as special diplomatic envoy for international peace negotiations and humanitarian crises, with particular focus on women's rights and global security.",
+      "highlights": [
+        "Negotiated peace agreements in over 50 international conflicts",
+        "Established women's rights protocols adopted by 180+ nations",
+        "Coordinated humanitarian aid delivery to conflict zones worldwide",
+        "Developed international protocols for superhuman registration and oversight"
+      ]
+    },
+    {
+      "name": "Justice League International",
+      "position": "Founding Member & Strategic Director",
+      "url": "https://www.justiceleague.org",
+      "startDate": "1960-03",
+      "endDate": "",
+      "summary": "Co-founded and leads strategic operations for the world's premier superhero organization, coordinating global threat response and international cooperation.",
+      "highlights": [
+        "Defeated interdimensional threats to Earth's existence",
+        "Established protocols for alien first contact situations",
+        "Created superhero training programs adopted worldwide",
+        "Led successful campaigns against Darkseid and other cosmic threats",
+        "Maintained 100% mission success rate in team operations"
+      ]
+    },
+    {
+      "name": "Smithsonian Institution",
+      "position": "Senior Curator of Ancient Civilizations",
+      "url": "https://www.si.edu",
+      "startDate": "1946-01",
+      "endDate": "1949-12",
+      "summary": "Curated extensive collections of ancient artifacts and provided expertise on pre-classical Mediterranean civilizations.",
+      "highlights": [
+        "Authenticated over 2000 ancient artifacts",
+        "Published definitive works on Amazon culture and history",
+        "Established new dating methods for ancient Greek pottery",
+        "Discovered previously unknown trade routes in ancient Mediterranean"
+      ]
+    },
+    {
+      "name": "U.S. Department of Defense",
+      "position": "Strategic Consultant",
+      "url": "https://www.defense.gov",
+      "startDate": "1941-06",
+      "endDate": "1945-09",
+      "summary": "Provided strategic intelligence and tactical support during World War II, working directly with Allied command to counter Axis powers.",
+      "highlights": [
+        "Led covert operations behind enemy lines in Europe",
+        "Prevented development of advanced Nazi weapons programs",
+        "Coordinated resistance movements in occupied territories",
+        "Saved thousands of civilian lives during liberation campaigns"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Women's Empowerment Foundation",
+      "position": "Global Ambassador",
+      "url": "https://www.womensempowerment.org",
+      "startDate": "2000-01",
+      "endDate": "",
+      "summary": "Dedicated advocate for gender equality and women's empowerment worldwide, speaking at international conferences and supporting grassroots organizations.",
+      "highlights": [
+        "Mentored over 1000 young women in leadership roles",
+        "Spoke at 200+ international conferences on women's rights",
+        "Established scholarship programs for disadvantaged girls",
+        "Created leadership training programs adopted by 50+ countries"
+      ]
+    },
+    {
+      "organization": "Ocean Conservation Alliance",
+      "position": "Board Member",
+      "url": "https://www.oceanconservation.org",
+      "startDate": "1990-01",
+      "endDate": "",
+      "summary": "Active in marine conservation efforts, particularly protecting endangered sea life and leading oceanic cleanup initiatives.",
+      "highlights": [
+        "Led cleanup of 500+ miles of ocean coastline",
+        "Protected endangered marine species around Themyscira",
+        "Established marine sanctuaries in international waters",
+        "Raised $50M+ for ocean conservation projects"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Harvard Law School",
+      "url": "https://hls.harvard.edu",
+      "area": "International Law and Human Rights",
+      "studyType": "Juris Doctor",
+      "startDate": "1945",
+      "endDate": "1948",
+      "score": "Magna Cum Laude",
+      "courses": [
+        "International Law",
+        "Human Rights Law",
+        "Diplomatic Law",
+        "Constitutional Law"
+      ]
+    },
+    {
+      "institution": "Georgetown University",
+      "url": "https://www.georgetown.edu",
+      "area": "International Relations with Political Science",
+      "studyType": "Bachelor of Arts",
+      "startDate": "1941",
+      "endDate": "1945",
+      "score": "Summa Cum Laude",
+      "courses": [
+        "International Relations",
+        "Political Science",
+        "Ancient Languages",
+        "Diplomatic History"
+      ]
+    },
+    {
+      "institution": "Themyscira Academy",
+      "url": "https://www.themyscira.gov",
+      "area": "Classical Studies and Diplomatic Arts",
+      "studyType": "Classical Education",
+      "startDate": "Ancient Times",
+      "endDate": "1940",
+      "score": "Highest Honors",
+      "courses": [
+        "Classical Philosophy",
+        "Ancient History",
+        "Military Strategy",
+        "Diplomatic Arts"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "UN Honorary Ambassador for Women's Empowerment",
+      "date": "2016",
+      "awarder": "United Nations",
+      "summary": "Appointed Honorary Ambassador for the Empowerment of Women and Girls, promoting gender equality and women's rights globally"
+    },
+    {
+      "title": "Medal of Honor",
+      "date": "1945",
+      "awarder": "United States Congress",
+      "summary": "Awarded for extraordinary service during World War II, including the liberation of concentration camps and protection of Allied forces"
+    },
+    {
+      "title": "Order of Merit",
+      "date": "1960",
+      "awarder": "United Kingdom",
+      "summary": "For distinguished service in international diplomacy and peacekeeping efforts"
+    },
+    {
+      "title": "Nobel Peace Prize Nominee",
+      "date": "2010",
+      "awarder": "Nobel Committee",
+      "summary": "Nominated for lifetime dedication to international peace and conflict resolution"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Juris Doctor",
+      "date": "1948",
+      "issuer": "Harvard Law School",
+      "url": "https://hls.harvard.edu"
+    },
+    {
+      "name": "Diplomatic Immunity Certification",
+      "date": "1950",
+      "issuer": "United Nations",
+      "url": "https://www.un.org"
+    },
+    {
+      "name": "International Peace Mediator",
+      "date": "1955",
+      "issuer": "International Court of Justice",
+      "url": "https://www.icj-cij.org"
+    }
+  ],
+  "publications": [
+    {
+      "name": "The Amazon Way: Ancient Wisdom for Modern Diplomacy",
+      "publisher": "Oxford University Press",
+      "releaseDate": "1975-06",
+      "url": "https://global.oup.com",
+      "summary": "Comprehensive analysis of Amazonian diplomatic traditions and their applications to modern international relations"
+    },
+    {
+      "name": "Women in War: Leadership and Courage in Crisis",
+      "publisher": "Harvard University Press",
+      "releaseDate": "1985-03",
+      "url": "https://www.hup.harvard.edu",
+      "summary": "Historical examination of women's roles in conflict resolution and military leadership throughout history"
+    },
+    {
+      "name": "Ancient Civilizations and Modern Ethics",
+      "publisher": "Smithsonian Books",
+      "releaseDate": "1995-11",
+      "url": "https://www.smithsonianbooks.com",
+      "summary": "Exploration of how ancient philosophical traditions can inform contemporary ethical decision-making"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Diplomacy & International Relations",
+      "level": "Expert",
+      "keywords": ["International Diplomacy", "Peace Negotiations", "Conflict Resolution", "Treaty Negotiation", "Cross-Cultural Communication"]
+    },
+    {
+      "name": "Combat & Military Strategy",
+      "level": "Master",
+      "keywords": ["Amazonian Combat Techniques", "Military Strategy", "Tactical Planning", "Swordsmanship", "Archery", "Hand-to-Hand Combat"]
+    },
+    {
+      "name": "Languages",
+      "level": "Master",
+      "keywords": ["200+ Modern Languages", "Ancient Greek", "Latin", "Sumerian", "Egyptian Hieroglyphics", "Diplomatic Translation"]
+    },
+    {
+      "name": "Leadership & Management",
+      "level": "Expert",
+      "keywords": ["Team Leadership", "Strategic Planning", "Crisis Management", "International Coordination", "Superhero Team Management"]
+    },
+    {
+      "name": "Archaeological Research",
+      "level": "Expert",
+      "keywords": ["Artifact Authentication", "Ancient Civilizations", "Research Methodology", "Historical Analysis", "Museum Curation"]
+    },
+    {
+      "name": "Legal Expertise",
+      "level": "Expert",
+      "keywords": ["International Law", "Human Rights Law", "Diplomatic Law", "Constitutional Law", "Legal Research"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native"
+    },
+    {
+      "language": "Ancient Greek",
+      "fluency": "Native"
+    },
+    {
+      "language": "Modern Greek",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Latin",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "French",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Arabic",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Mandarin",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Russian",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "200+ Additional Languages",
+      "fluency": "Various levels"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Martial Arts & Combat Training",
+      "keywords": ["Amazonian combat techniques", "Classical Greek wrestling", "Military combat systems", "Swordsmanship", "Archery"]
+    },
+    {
+      "name": "Ancient Languages & Archaeology",
+      "keywords": ["Ancient civilizations", "Archaeological research", "Historical analysis", "Cultural connections", "Academic journals"]
+    },
+    {
+      "name": "Equestrian Sports",
+      "keywords": ["Traditional horseback riding", "Aerial horseback riding", "International competitions", "Stable management"]
+    },
+    {
+      "name": "Art & Sculpture",
+      "keywords": ["Amazonian sculpture", "Greek pottery", "Diplomatic gifts", "Art studios", "International galleries"]
+    },
+    {
+      "name": "Environmental Conservation",
+      "keywords": ["Marine conservation", "Endangered species protection", "Ocean cleanup", "Environmental organizations"]
+    },
+    {
+      "name": "Women's Rights Advocacy",
+      "keywords": ["Gender equality", "Women's empowerment", "Leadership mentoring", "International conferences", "Grassroots organizations"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Global Women's Leadership Initiative",
+      "description": "Comprehensive program empowering women in leadership roles worldwide through education, mentorship, and policy advocacy",
+      "highlights": [
+        "Established leadership training programs in 50+ countries",
+        "Mentored over 1000 women in senior leadership positions",
+        "Created scholarship programs reaching 10,000+ young women"
+      ],
+      "keywords": ["Women's Empowerment", "Leadership", "Global Initiative"],
+      "startDate": "2000",
+      "endDate": "",
+      "url": "https://www.globalwomensleadership.org",
+      "roles": ["Founder", "Global Ambassador"],
+      "entity": "Women's Empowerment Foundation",
+      "type": "humanitarian"
+    },
+    {
+      "name": "International Superhero Protocols",
+      "description": "Development of comprehensive international frameworks for superhero registration, oversight, and cooperation",
+      "highlights": [
+        "Established protocols adopted by 150+ countries",
+        "Created ethical guidelines for superhero operations",
+        "Developed international cooperation frameworks"
+      ],
+      "keywords": ["International Law", "Superhero Oversight", "Global Security"],
+      "startDate": "1960",
+      "endDate": "1985",
+      "url": "https://www.justiceleague.org/protocols",
+      "roles": ["Lead Architect", "Primary Negotiator"],
+      "entity": "Justice League International",
+      "type": "policy"
+    }
+  ],
+  "references": [
+    {
+      "name": "Steve Trevor",
+      "reference": "Diana has been an exceptional military liaison and strategic partner. Her diplomatic skills and leadership in high-stakes international operations are unparalleled. I highly recommend her for any position requiring crisis management and international cooperation."
+    },
+    {
+      "name": "Queen Hippolyta",
+      "reference": "As Diana's mother and former Queen of Themyscira, I have witnessed her growth into a compassionate and powerful leader. Her dedication to justice and peace, combined with her diplomatic expertise, makes her an invaluable asset to any organization."
+    },
+    {
+      "name": "Bruce Wayne",
+      "reference": "Diana's strategic thinking and collaborative leadership have been essential to Justice League operations. Her ability to bridge different perspectives and cultures while maintaining unwavering moral principles makes her an exemplary colleague and leader."
+    },
+    {
+      "name": "António Guterres",
+      "reference": "Ambassador Prince has provided exceptional service to the United Nations. Her negotiation skills and deep understanding of international law have been instrumental in achieving peaceful resolutions to complex global conflicts."
+    }
+  ]
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

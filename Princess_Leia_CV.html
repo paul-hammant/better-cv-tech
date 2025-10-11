@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Leia Organa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print CV">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "Leia Organa",
+        "label": "Galactic Senator & Military Strategic Leader",
+        "image": "",
+        "email": "leia.organa@newrepublic.gov",
+        "phone": "+1 (555) REBEL-1",
+        "url": "",
+        "summary": "**Galactic Senator** and **Military Strategic Leader** with extensive experience in **interplanetary diplomacy**, **resistance operations**, and **democratic governance**. Proven track record in building coalitions, leading complex military campaigns, and establishing democratic institutions across diverse planetary systems.\n\nExpert in **crisis management**, **intelligence operations**, and **constitutional law** with deep knowledge of **galactic politics** and **inter-species relations**. Committed to peace, justice, and democratic principles throughout the galaxy.",
+        "location": {
+            "address": "New Republic Senate Building",
+            "postalCode": "",
+            "city": "Chandrila",
+            "countryCode": "",
+            "region": "Core Worlds"
+        },
+        "profiles": []
+    },
+    "work": [
+        {
+            "name": "New Republic Senate",
+            "position": "Senator & Chief of State",
+            "url": "https://www.rebelalliance.org",
+            "startDate": "4 ABY-05",
+            "endDate": null,
+            "summary": "Leading democratic governance of the New Republic, coordinating policy across thousands of member worlds and species in the aftermath of Imperial collapse.",
+            "highlights": [
+                "Established democratic constitution adopted by 10,000+ planetary systems.",
+                "Negotiated peace agreements ending conflicts in 50+ star systems.",
+                "Created inter-species council for galactic cooperation and trade.",
+                "Developed universal declaration of sentient rights adopted galaxy-wide.",
+                "Led successful resistance against First Order resurgence."
+            ]
+        },
+        {
+            "name": "Resistance",
+            "position": "General & Supreme Commander",
+            "url": "https://www.rebelalliance.org",
+            "startDate": "28 ABY-01",
+            "endDate": null,
+            "summary": "Leading military resistance against First Order expansion, coordinating guerrilla operations and building coalition for democratic restoration.",
+            "highlights": [
+                "Prevented First Order from achieving galactic domination.",
+                "Coordinated successful destruction of Starkiller Base.",
+                "Established resistance cells throughout First Order territory.",
+                "Led final assault on Exegol defeating Emperor Palpatine permanently.",
+                "Rebuilt galactic democracy after First Order defeat."
+            ]
+        },
+        {
+            "name": "Rebel Alliance",
+            "position": "Princess & Strategic Commander",
+            "url": "https://www.rebelalliance.org",
+            "startDate": "0 ABY-01",
+            "endDate": "4 ABY-05",
+            "summary": "Senior leadership in galactic rebellion against Imperial tyranny, coordinating military operations and diplomatic outreach across the galaxy.",
+            "highlights": [
+                "Secured Death Star plans leading to successful destruction of ultimate weapon.",
+                "Coordinated Battle of Endor resulting in Emperor's defeat.",
+                "Established rebel cells in 500+ star systems.",
+                "Led evacuation of Hoth base saving thousands of rebel personnel.",
+                "Negotiated crucial alliance with Ewoks for final Imperial assault."
+            ]
+        },
+        {
+            "name": "Royal House of Alderaan",
+            "position": "Princess & Diplomatic Envoy",
+            "url": "https://www.rebelalliance.org",
+            "startDate": "19 BBY-01",
+            "endDate": "0 ABY-01",
+            "summary": "Representing Alderaan in Imperial Senate while secretly building resistance network and gathering intelligence on Imperial operations.",
+            "highlights": [
+                "Maintained Alderaan's autonomy within Imperial system for 19 years.",
+                "Established covert humanitarian aid networks for oppressed systems.",
+                "Negotiated trade agreements preserving planetary independence.",
+                "Coordinated relief efforts for war-torn systems.",
+                "Developed diplomatic immunity protocols protecting refugee populations."
+            ]
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "Galactic Refugee Assistance Network",
+            "position": "Founder & Director",
+            "url": "",
+            "startDate": "",
+            "endDate": "",
+            "summary": "Active in refugee assistance and disaster relief operations throughout the galaxy. Established orphanages and schools on war-torn worlds.",
+            "highlights": []
+        }
+    ],
+    "education": [
+        {
+            "institution": "Royal Academy of Alderaan",
+            "url": "",
+            "area": "Diplomatic Protocol & Constitutional Law",
+            "studyType": "Royal Education",
+            "startDate": "0 ABY",
+            "endDate": "16 ABY",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "Imperial Academy",
+            "url": "",
+            "area": "Intelligence Operations",
+            "studyType": "Intelligence Training",
+            "startDate": "17 ABY",
+            "endDate": "18 ABY",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "New Republic Diplomatic Corps",
+            "url": "",
+            "area": "Galactic Diplomacy",
+            "studyType": "Advanced Diplomacy",
+            "startDate": "4 ABY",
+            "endDate": "6 ABY",
+            "score": "",
+            "courses": []
+        }
+    ],
+    "awards": [
+        {
+            "title": "Order of the Republic",
+            "date": "",
+            "awarder": "New Republic",
+            "summary": "Awarded the **Order of the Republic** for exceptional service in the defeat of the Galactic Empire and establishment of democratic governance across liberated systems."
+        },
+        {
+            "title": "Galactic Peace Prize",
+            "date": "8 ABY",
+            "awarder": "Galactic Peace Council",
+            "summary": "Recipient of the **Galactic Peace Prize** (8 ABY) for successful negotiation of peace treaties with over 100 planetary systems and species."
+        },
+        {
+            "title": "Hero of the Rebellion",
+            "date": "",
+            "awarder": "Rebel Alliance",
+            "summary": "Official recognition as **Hero of the Rebellion** for leadership in the destruction of both Death Stars and liberation of countless worlds from Imperial oppression."
+        }
+    ],
+    "certificates": [],
+    "publications": [],
+    "skills": [
+        {
+            "name": "Leadership & Governance",
+            "level": "Expert",
+            "keywords": ["Democratic Governance", "Coalition Building", "Crisis Management", "Political Strategy", "Constitutional Law"]
+        },
+        {
+            "name": "Military Strategy",
+            "level": "Expert",
+            "keywords": ["Strategic Planning", "Asymmetric Warfare", "Tactical Coordination", "Intelligence Operations", "Resistance Tactics"]
+        },
+        {
+            "name": "Diplomacy & Negotiation",
+            "level": "Expert",
+            "keywords": ["Interplanetary Diplomacy", "Peace Negotiation", "Conflict Resolution", "Treaty Development", "Inter-species Relations"]
+        },
+        {
+            "name": "Force Abilities",
+            "level": "Intermediate",
+            "keywords": ["Force Sensitivity", "Meditation", "Lightsaber Combat", "Jedi Philosophy", "Living Force Connection"]
+        },
+        {
+            "name": "Cultural Studies",
+            "level": "Advanced",
+            "keywords": ["Alien Languages", "Cultural Practices", "Historical Research", "Archaeological Studies", "Cultural Preservation"]
+        }
+    ],
+    "languages": [
+        {
+            "language": "Basic (Galactic Standard)",
+            "fluency": "Native"
+        },
+        {
+            "language": "Shyriiwook",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "Huttese",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "Binary",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "50+ Galactic Languages",
+            "fluency": "Various levels"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Force Training & Jedi Studies",
+            "keywords": ["Meditation", "Lightsaber Training", "Jedi Philosophy", "Force Exercises", "Living Force", "Spiritual Development"]
+        },
+        {
+            "name": "Galactic History & Archaeology",
+            "keywords": ["Ancient Civilizations", "Pre-Republic History", "Historical Texts", "Artifact Collection", "Historical Preservation"]
+        },
+        {
+            "name": "Interspecies Cultural Studies",
+            "keywords": ["Alien Languages", "Cultural Practices", "Species Diversity", "Cultural Preservation", "Anthropological Research"]
+        },
+        {
+            "name": "Military Strategy & Tactics",
+            "keywords": ["Advanced Strategy", "Asymmetric Warfare", "Historical Battles", "Tactical Development", "Military Education"]
+        },
+        {
+            "name": "Humanitarian Work",
+            "keywords": ["Refugee Assistance", "Disaster Relief", "Orphanages", "Educational Development", "Planetary Rebuilding"]
+        },
+        {
+            "name": "Diplomatic Protocol & Negotiation",
+            "keywords": ["Complex Negotiations", "Conflict Resolution", "Inter-planetary Mediation", "Peaceful Solutions", "Diplomatic Innovation"]
+        }
+    ],
+    "references": [
+        {
+            "name": "Han Solo",
+            "reference": "Husband and Military Partner"
+        },
+        {
+            "name": "Luke Skywalker",
+            "reference": "Brother and Jedi Master"
+        },
+        {
+            "name": "Mon Mothma",
+            "reference": "Former Chief of State and Political Mentor"
+        },
+        {
+            "name": "Admiral Ackbar",
+            "reference": "Military Advisor and Fleet Commander"
+        }
+    ],
+    "projects": []
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

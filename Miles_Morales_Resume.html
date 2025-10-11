@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Miles Morales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print Resume">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "Miles Gonzalo Morales",
+        "label": "Community Advocate & Technology Innovation Student",
+        "image": "",
+        "email": "miles.morales@brooklynvisions.edu",
+        "phone": "+1 (718) 555-SPIDEY",
+        "url": "",
+        "summary": "**Community Advocate** and **Technology Innovation Student** with expertise in **crisis response**, **youth mentorship**, and **urban community development**. Proven track record in **emergency coordination**, **conflict resolution**, and **bridge-building** between diverse communities.\n\nSpecialist in **STEM education**, **bilingual communication**, and **cultural preservation** with deep knowledge of **Brooklyn community dynamics** and **social justice initiatives**. Committed to protecting and empowering underrepresented communities through service and leadership.",
+        "location": {
+            "address": "Brooklyn Visions Academy",
+            "postalCode": "11201",
+            "city": "Brooklyn",
+            "countryCode": "US",
+            "region": "NY"
+        },
+        "profiles": []
+    },
+    "work": [
+        {
+            "name": "Brooklyn Community Safety Initiative",
+            "position": "Youth Coordinator & Crisis Response Specialist",
+            "url": "https://www.brooklynsafety.org",
+            "startDate": "2019-06",
+            "endDate": null,
+            "summary": "Coordinating youth-led community safety programs and rapid response to local emergencies, focusing on crime prevention and community resilience in Brooklyn neighborhoods.",
+            "highlights": [
+                "Reduced youth crime rates by 40% in target Brooklyn neighborhoods.",
+                "Coordinated emergency response for 50+ community crisis situations.",
+                "Developed bilingual safety education programs reaching 500+ families.",
+                "Created youth mentor network serving 200+ at-risk teenagers.",
+                "Established community watch programs in 15 apartment complexes."
+            ]
+        },
+        {
+            "name": "Brooklyn Public Library System",
+            "position": "STEM Education Tutor & Program Assistant",
+            "url": "https://www.bpl.org",
+            "startDate": "2018-09",
+            "endDate": null,
+            "summary": "Providing STEM tutoring and educational support to elementary and middle school students, with particular focus on underrepresented communities in Brooklyn.",
+            "highlights": [
+                "Tutored 100+ students in mathematics, science, and computer programming.",
+                "Developed bilingual STEM curriculum for Spanish-speaking families.",
+                "Created technology workshops increasing computer literacy by 85%.",
+                "Established coding clubs in 5 underserved Brooklyn schools.",
+                "Mentored 25+ students in college preparation and STEM career planning."
+            ]
+        },
+        {
+            "name": "Spider-Verse Alliance",
+            "position": "Interdimensional Liaison & Strategic Coordinator",
+            "url": "https://www.spider-alliance.org",
+            "startDate": "2019-03",
+            "endDate": null,
+            "summary": "Coordinating multi-dimensional crisis response and maintaining communication between alternative universe Spider-People for global threat management.",
+            "highlights": [
+                "Successfully coordinated response to 20+ interdimensional threats.",
+                "Established communication protocols between 15+ Spider-People variants.",
+                "Developed tactical strategies for multiverse preservation operations.",
+                "Trained new Spider-People in responsible use of abilities.",
+                "Maintained 100% success rate in dimensional stability operations."
+            ]
+        },
+        {
+            "name": "Morales Family Auto Shop",
+            "position": "Assistant Mechanic & Business Operations",
+            "url": "https://www.moralesauto.brooklyn",
+            "startDate": "2017-01",
+            "endDate": null,
+            "summary": "Supporting family business operations while learning automotive repair and developing customer service skills in bilingual community environment.",
+            "highlights": [
+                "Learned advanced automotive repair and diagnostic techniques.",
+                "Managed customer relations for 200+ regular clients.",
+                "Implemented digital scheduling system improving efficiency by 30%.",
+                "Provided Spanish-English translation services for customers.",
+                "Contributed to 25% increase in family business revenue."
+            ]
+        }
+    ],
+    "volunteer": [],
+    "education": [
+        {
+            "institution": "Brooklyn Visions Academy",
+            "url": "",
+            "area": "STEM Program",
+            "studyType": "Secondary Education",
+            "startDate": "2018",
+            "endDate": "Present",
+            "score": "4.0 GPA",
+            "courses": []
+        },
+        {
+            "institution": "Brooklyn Community College",
+            "url": "",
+            "area": "Computer Programming & Urban Studies",
+            "studyType": "Dual Enrollment",
+            "startDate": "2020",
+            "endDate": "Present",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "Future Leaders Institute",
+            "url": "",
+            "area": "Community Leadership",
+            "studyType": "Leadership Training",
+            "startDate": "2019",
+            "endDate": "2020",
+            "score": "",
+            "courses": []
+        }
+    ],
+    "awards": [
+        {
+            "title": "NYC Youth Hero Award",
+            "date": "2021",
+            "awarder": "New York City",
+            "summary": "Awarded **NYC Youth Hero Award** (2021) for exceptional community service and leadership in Brooklyn neighborhood safety and youth development programs."
+        },
+        {
+            "title": "STEM Excellence Recognition",
+            "date": "",
+            "awarder": "Brooklyn STEM Council",
+            "summary": "Received **Brooklyn STEM Excellence Award** for innovative technology projects addressing community challenges and mentoring underrepresented youth in STEM fields."
+        },
+        {
+            "title": "Bilingual Community Bridge Builder",
+            "date": "",
+            "awarder": "Brooklyn Community Council",
+            "summary": "Recognized as **Outstanding Bilingual Advocate** for facilitating communication between Spanish-speaking families and English-speaking institutions in Brooklyn."
+        }
+    ],
+    "certificates": [
+        {
+            "name": "Peer Mediation Certification",
+            "date": "2020",
+            "issuer": "Future Leaders Institute",
+            "url": ""
+        },
+        {
+            "name": "Crisis Intervention Certification",
+            "date": "2020",
+            "issuer": "Future Leaders Institute",
+            "url": ""
+        }
+    ],
+    "publications": [],
+    "skills": [
+        {
+            "name": "Community Leadership",
+            "level": "Advanced",
+            "keywords": ["Crisis Response", "Youth Mentorship", "Conflict Resolution", "Community Development", "Emergency Coordination"]
+        },
+        {
+            "name": "STEM & Technology",
+            "level": "Advanced",
+            "keywords": ["Computer Programming", "App Development", "Physics", "Engineering Design", "Technology Workshops"]
+        },
+        {
+            "name": "Bilingual Communication",
+            "level": "Expert",
+            "keywords": ["Spanish-English Translation", "Cross-cultural Communication", "Community Bridge-building", "Cultural Preservation"]
+        },
+        {
+            "name": "Creative Arts",
+            "level": "Advanced",
+            "keywords": ["Street Art", "Graffiti", "Music Production", "Photography", "Digital Storytelling"]
+        },
+        {
+            "name": "Sports & Recreation",
+            "level": "Intermediate",
+            "keywords": ["Basketball", "Youth Coaching", "Community Sports", "Team Building", "Athletic Mentorship"]
+        }
+    ],
+    "languages": [
+        {
+            "language": "English",
+            "fluency": "Native"
+        },
+        {
+            "language": "Spanish",
+            "fluency": "Native"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Street Art & Graffiti Culture",
+            "keywords": ["Street Art", "Graffiti Creation", "Urban Art Scene", "Community Murals", "Latino Culture", "Art Workshops"]
+        },
+        {
+            "name": "Music Production & Hip-Hop Culture",
+            "keywords": ["Music Production", "DJ", "Original Beats", "Hip-hop Scene", "Community Events", "Home Studio"]
+        },
+        {
+            "name": "Community Sports & Basketball",
+            "keywords": ["Pickup Basketball", "Community Sports", "Youth Tournaments", "Community Building", "Youth Coaching"]
+        },
+        {
+            "name": "Technology & Coding",
+            "keywords": ["Programming", "App Development", "Community Tools", "Mobile Apps", "Open-source Projects", "Coding Education"]
+        },
+        {
+            "name": "Latino Cultural Preservation",
+            "keywords": ["Latino Culture", "Cultural Events", "Language Education", "Family Traditions", "Community Festivals"]
+        },
+        {
+            "name": "Photography & Documentation",
+            "keywords": ["Brooklyn Community Photography", "Digital Storytelling", "Visual Narratives", "Social Media", "Community Documentation"]
+        }
+    ],
+    "references": [
+        {
+            "name": "Jefferson Davis-Morales",
+            "reference": "Father and NYPD Police Officer"
+        },
+        {
+            "name": "Rio Morales",
+            "reference": "Mother and Healthcare Administrator"
+        },
+        {
+            "name": "Peter B. Parker",
+            "reference": "Mentor and Fellow Spider-Person"
+        },
+        {
+            "name": "Gwen Stacy",
+            "reference": "Interdimensional Colleague and Friend"
+        }
+    ],
+    "projects": []
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

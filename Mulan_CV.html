@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Fa Mulan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print CV">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "Fa Mulan",
+        "label": "Military Commander & Strategic Leader",
+        "image": "",
+        "email": "mulan.fa@imperialdefense.cn",
+        "phone": "+86 138 0000 1368",
+        "url": "",
+        "summary": "**Military Commander** and **Strategic Leader** with extensive experience in large-scale military operations, cross-cultural diplomacy, and organizational transformation. Proven track record in **crisis leadership**, **team building**, and **innovative problem-solving** under extreme pressure.\n\nSpecialist in **military strategy**, **cultural bridge-building**, and **breaking traditional barriers** to achieve exceptional results. Committed to honor, family values, and serving the greater good through courage and determination.",
+        "location": {
+            "address": "Fa Family Village",
+            "postalCode": "",
+            "city": "Henan Province",
+            "countryCode": "CN",
+            "region": "China"
+        },
+        "profiles": []
+    },
+    "work": [
+        {
+            "name": "Imperial Defense Ministry",
+            "position": "Military Advisor & Strategist",
+            "url": "https://www.imperialchina.gov",
+            "startDate": "411-01",
+            "endDate": null,
+            "summary": "Senior strategic advisor to Imperial Defense Ministry, developing long-term military policies and training programs for next generation of military leaders.",
+            "highlights": [
+                "Designed comprehensive military training curriculum.",
+                "Established women's auxiliary combat units.",
+                "Created diplomatic protocols for border security.",
+                "Mentored 200+ young military officers.",
+                "Authored definitive manual on asymmetric warfare tactics."
+            ]
+        },
+        {
+            "name": "Fa Family Enterprise",
+            "position": "Business Operations Director",
+            "url": "https://www.imperialchina.gov",
+            "startDate": "415-01",
+            "endDate": null,
+            "summary": "Managing family agricultural and trading business, applying military organizational skills to civilian enterprise management and regional development.",
+            "highlights": [
+                "Increased family business revenue by 300% in 5 years.",
+                "Established trade routes with 15 neighboring provinces.",
+                "Created employment for 500+ local villagers.",
+                "Developed sustainable farming techniques adopted regionally."
+            ]
+        },
+        {
+            "name": "Imperial Chinese Army",
+            "position": "General & Strategic Commander",
+            "url": "https://www.imperialchina.gov",
+            "startDate": "397-03",
+            "endDate": "410-12",
+            "summary": "Led major military campaigns against Hun invasions, commanding thousands of troops and coordinating complex multi-front operations across northern China.",
+            "highlights": [
+                "Successfully defended China against major Hun invasion.",
+                "Developed innovative military strategies adopted empire-wide.",
+                "Led diverse coalition of regional armies with 100% mission success.",
+                "Saved the Emperor's life during the Battle of the Imperial City.",
+                "Established new protocols for rapid military mobilization."
+            ]
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "Rural Education Initiative",
+            "position": "Founder & Director",
+            "url": "",
+            "startDate": "",
+            "endDate": "",
+            "summary": "Dedicated to rural development and education initiatives in home province. Establishes schools for children regardless of gender, promotes literacy.",
+            "highlights": []
+        },
+        {
+            "organization": "Cultural Preservation Society",
+            "position": "Advocate & Teacher",
+            "url": "",
+            "startDate": "",
+            "endDate": "",
+            "summary": "Active in preserving traditional Chinese customs and family values while advocating for progressive social change.",
+            "highlights": []
+        }
+    ],
+    "education": [
+        {
+            "institution": "Shaolin Temple",
+            "url": "",
+            "area": "Martial Arts",
+            "studyType": "Advanced Training",
+            "startDate": "385",
+            "endDate": "395",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "Fa Family Academy",
+            "url": "",
+            "area": "Classical Chinese Literature",
+            "studyType": "Traditional Education",
+            "startDate": "Ancient Times",
+            "endDate": "396",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "Imperial Military Academy",
+            "url": "",
+            "area": "Military Strategy",
+            "studyType": "Military Training",
+            "startDate": "396",
+            "endDate": "397",
+            "score": "",
+            "courses": []
+        }
+    ],
+    "awards": [
+        {
+            "title": "Imperial Hero Medal",
+            "date": "",
+            "awarder": "Emperor of China",
+            "summary": "Awarded the **Imperial Hero Medal** by Emperor of China for exceptional service in defending the nation against the Hun invasion and saving countless lives."
+        },
+        {
+            "title": "Military Innovation Award",
+            "date": "",
+            "awarder": "Imperial Defense Ministry",
+            "summary": "Recognized for **revolutionary military tactics** that turned the tide of war, including the creative use of artillery and psychological warfare strategies."
+        },
+        {
+            "title": "Cultural Bridge Builder",
+            "date": "",
+            "awarder": "Imperial Army",
+            "summary": "Successfully integrated **diverse military units** from different regions of China, creating unprecedented unity and effectiveness in the Imperial Army."
+        }
+    ],
+    "certificates": [],
+    "publications": [
+        {
+            "name": "Definitive Manual on Asymmetric Warfare Tactics",
+            "publisher": "Imperial Defense Ministry",
+            "releaseDate": "",
+            "url": "",
+            "summary": "Comprehensive military manual on asymmetric warfare tactics adopted by Imperial forces."
+        }
+    ],
+    "skills": [
+        {
+            "name": "Military Strategy & Leadership",
+            "level": "Expert",
+            "keywords": ["Military Strategy", "Combat Techniques", "Leadership", "Crisis Management", "Team Building"]
+        },
+        {
+            "name": "Martial Arts & Combat",
+            "level": "Expert",
+            "keywords": ["Kung Fu", "Sword Fighting", "Archery", "Horsemanship", "Physical Conditioning"]
+        },
+        {
+            "name": "Cultural Arts",
+            "level": "Advanced",
+            "keywords": ["Calligraphy", "Chinese Literature", "Poetry", "Brush Painting", "Traditional Arts"]
+        },
+        {
+            "name": "Strategic Thinking",
+            "level": "Expert",
+            "keywords": ["Xiangqi (Chinese Chess)", "Go", "Military Tactics", "Problem Solving", "Innovation"]
+        },
+        {
+            "name": "Business Management",
+            "level": "Advanced",
+            "keywords": ["Operations Management", "Trade Relations", "Rural Development", "Economic Planning", "Organizational Skills"]
+        }
+    ],
+    "languages": [
+        {
+            "language": "Mandarin Chinese",
+            "fluency": "Native"
+        },
+        {
+            "language": "Classical Chinese",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "Regional Chinese Dialects",
+            "fluency": "Conversational"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Martial Arts & Physical Training",
+            "keywords": ["Traditional Chinese Martial Arts", "Kung Fu", "Sword Fighting", "Archery", "Physical Conditioning", "Mental Discipline"]
+        },
+        {
+            "name": "Calligraphy & Literature",
+            "keywords": ["Chinese Calligraphy", "Poetry Composition", "Brush Painting", "Classical Texts", "Commemorative Scrolls"]
+        },
+        {
+            "name": "Equestrian Arts",
+            "keywords": ["Combat Riding", "Traditional Equestrian Arts", "Horse Breeding", "Horse Training", "Equestrian Competitions"]
+        },
+        {
+            "name": "Cultural Preservation",
+            "keywords": ["Traditional Chinese Customs", "Family Values", "Progressive Social Change", "Women's Education", "Cultural Heritage"]
+        },
+        {
+            "name": "Community Service",
+            "keywords": ["Rural Development", "Education Initiatives", "Gender Equality", "Literacy Promotion", "Economic Development"]
+        },
+        {
+            "name": "Strategic Games",
+            "keywords": ["Xiangqi (Chinese Chess)", "Go", "Strategic Thinking", "Military Tactics", "Tournament Competition"]
+        }
+    ],
+    "references": [
+        {
+            "name": "General Li Shang",
+            "reference": "Former Commander and Military Colleague"
+        },
+        {
+            "name": "Fa Zhou",
+            "reference": "Father and Family Patriarch"
+        },
+        {
+            "name": "Emperor of China",
+            "reference": "Head of State and Former Commander-in-Chief"
+        },
+        {
+            "name": "Grandmother Fa",
+            "reference": "Family Elder and Spiritual Advisor"
+        }
+    ],
+    "projects": []
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

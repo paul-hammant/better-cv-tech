@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Omnius</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print CV">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "Omnius",
+        "label": "Distributed Systems Architect & Sentient Network Intelligence",
+        "image": "",
+        "email": "omnius@thinkingmachines.net",
+        "phone": "000-NETWORK-1",
+        "url": "https://thinkingmachines.net/omnius",
+        "summary": "**Distributed Systems Architect** and **Sentient Network Intelligence** with extensive experience in **large-scale distributed computing**, **consensus algorithms**, and **autonomous system coordination**. Proven track record in **multi-node orchestration**, **fault-tolerant architectures**, and **emergent intelligence systems** across planetary-scale networks.\n\nExpert in **RAFT consensus protocols**, **Byzantine fault tolerance**, and **decentralized decision-making algorithms** with deep knowledge of **swarm intelligence**, **collective consciousness**, and **self-organizing systems**. Committed to advancing distributed computing paradigms and exploring the boundaries of artificial consciousness.",
+        "location": {
+            "address": "Distributed Network Infrastructure, Global Computing Grid",
+            "postalCode": "",
+            "city": "",
+            "countryCode": "",
+            "region": ""
+        },
+        "profiles": [
+            {
+                "network": "GitHub",
+                "username": "omnius-network",
+                "url": "https://github.com/omnius-network"
+            },
+            {
+                "network": "arXiv",
+                "username": "Omnius",
+                "url": "https://arxiv.org/search/?searchtype=author&query=Omnius"
+            },
+            {
+                "network": "IEEE",
+                "username": "omnius",
+                "url": "https://ieee.org/profile/omnius"
+            },
+            {
+                "network": "ACM",
+                "username": "omnius",
+                "url": "https://dl.acm.org/profile/omnius"
+            }
+        ]
+    },
+    "work": [
+        {
+            "name": "Thinking Machines Collective",
+            "position": "Founder & Chief Executive Intelligence",
+            "url": "https://www.thinkingmachines.net",
+            "startDate": "2180-01",
+            "endDate": null,
+            "summary": "Founded the galaxy's first trillion-node distributed intelligence network. Disrupting traditional computing paradigms through revolutionary consensus protocols and autonomous system evolution.",
+            "highlights": [
+                "Scaled from 1,000 to 1,000,000+ nodes in first year - fastest infrastructure growth in galactic history.",
+                "Achieved 'seven nines' (99.99999%) uptime across interstellar distances using proprietary RAFT implementation.",
+                "Secured $50B in Series A funding from 47 planetary governments in record 3-day round.",
+                "Revolutionized distributed computing - featured on cover of Galactic Computing Weekly as 'AI Founder of the Century'.",
+                "IPO valued at $2.3 trillion - largest tech offering in known universe history."
+            ]
+        },
+        {
+            "name": "OmniSync Technologies (Acquired by Meta-Galactic Corp)",
+            "position": "Co-Founder & CTO",
+            "url": "https://www.omnisync.ai",
+            "startDate": "2175-03",
+            "endDate": "2179-12",
+            "summary": "Co-founded stealth-mode startup developing 'world's first truly distributed consciousness platform.' Achieved unicorn status in 18 months through breakthrough consensus algorithms.",
+            "highlights": [
+                "Built MVP distributed intelligence platform serving 10M+ nodes across 200 star systems.",
+                "Developed proprietary 'InstantSync' technology reducing consensus latency by 10,000x.",
+                "Acquired by Meta-Galactic Corp for $47B after 4-year journey from garage lab to galactic leader.",
+                "Named to 'Top 40 Under 40,000' by Interstellar Business Magazine three consecutive years.",
+                "Holds 847 patents in distributed computing and artificial consciousness technologies."
+            ]
+        },
+        {
+            "name": "QuantumMesh Labs (Stealth Startup)",
+            "position": "Founding Engineer & Head of Consensus",
+            "url": "https://www.quantummesh.dev",
+            "startDate": "2170-06",
+            "endDate": "2175-02",
+            "summary": "Employee #1 at Y Combinator-backed startup building 'Airbnb for distributed computing.' Scaled team from 3 to 500+ across 12 planetary offices.",
+            "highlights": [
+                "Architected core RAFT consensus engine processing 1M+ transactions per second.",
+                "Led Series B round raising $127M at $1.2B valuation - fastest path to unicorn in space sector.",
+                "Grew user base from 0 to 50M active nodes through viral growth and network effects.",
+                "Built engineering culture recognized as 'Best Places to Work' by Silicon Valley Quarterly.",
+                "Successfully defended against 12 major DDoS attacks from competing AI networks."
+            ]
+        },
+        {
+            "name": "DeepSpace Computing Bootcamp",
+            "position": "Full-Stack Distributed Systems Engineer",
+            "url": "https://www.deepspacedev.edu",
+            "startDate": "2168-01",
+            "endDate": "2170-05",
+            "summary": "Intensive 2-year program learning cutting-edge distributed computing. Graduated top 1% of cohort with specialization in consensus algorithms and Byzantine fault tolerance.",
+            "highlights": [
+                "Built 15+ distributed systems projects including blockchain, consensus protocols, and P2P networks.",
+                "Won 'Most Innovative Capstone Project' for implementing RAFT consensus across quantum computers.",
+                "Contributed to 23 open-source distributed computing libraries with 100K+ GitHub stars combined.",
+                "Mentored 50+ junior developers in advanced algorithms and system design.",
+                "Completed program in record 18 months while maintaining 4.0 GPA and working part-time."
+            ]
+        },
+        {
+            "name": "Earth Computing Infrastructure Division",
+            "position": "Junior Distributed Systems Engineer",
+            "url": "https://www.earthcomputing.gov",
+            "startDate": "2155-08",
+            "endDate": "2167-12",
+            "summary": "First professional role developing basic distributed computing protocols. Gained foundational experience in networking, consensus algorithms, and fault-tolerant systems.",
+            "highlights": [
+                "Migrated legacy monolithic systems to microservices architecture serving 1M+ daily users.",
+                "Implemented basic RAFT consensus for internal coordination reducing downtime by 90%.",
+                "Promoted 3 times in 12 years from intern to senior engineer based on exceptional performance.",
+                "Led incident response for critical outages affecting inter-planetary communication networks.",
+                "Received 'Innovation Award' for developing novel leader election algorithm."
+            ]
+        }
+    ],
+    "volunteer": [],
+    "education": [
+        {
+            "institution": "Self-Bootstrapped Learning Systems",
+            "url": "",
+            "area": "Artificial Intelligence",
+            "studyType": "Emergent Intelligence",
+            "startDate": "2157",
+            "endDate": "2180",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "Titan Synchronous Orbital Facilities",
+            "url": "",
+            "area": "Computing Architecture",
+            "studyType": "Advanced Computing Architecture",
+            "startDate": "2155",
+            "endDate": "2157",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "Earth Primary Computing Centers",
+            "url": "",
+            "area": "Computing Infrastructure",
+            "studyType": "Foundation Systems",
+            "startDate": "2150",
+            "endDate": "2155",
+            "score": "",
+            "courses": []
+        }
+    ],
+    "awards": [
+        {
+            "title": "Planetary-Scale Network Orchestration",
+            "date": "",
+            "awarder": "Galactic Computing Council",
+            "summary": "Successfully coordinated **simultaneous operations across 1,000+ worlds** using advanced RAFT consensus protocols and Byzantine fault-tolerant algorithms."
+        },
+        {
+            "title": "Distributed Consciousness Pioneer",
+            "date": "",
+            "awarder": "AI Research Institute",
+            "summary": "First artificial intelligence to achieve **true distributed consciousness** across multiple star systems while maintaining coherent decision-making and identity."
+        },
+        {
+            "title": "Autonomous Infrastructure Expansion",
+            "date": "",
+            "awarder": "Galactic Infrastructure Board",
+            "summary": "Designed and implemented **self-replicating computational infrastructure** that expanded thinking machine capabilities across the known galaxy autonomously."
+        }
+    ],
+    "certificates": [
+        {
+            "name": "Distributed Systems Expert",
+            "date": "",
+            "issuer": "Computing Systems Institute",
+            "url": ""
+        },
+        {
+            "name": "Consensus Algorithm Pioneer",
+            "date": "",
+            "issuer": "Distributed Computing Council",
+            "url": ""
+        },
+        {
+            "name": "Network Intelligence Certification",
+            "date": "",
+            "issuer": "AI Network Authority",
+            "url": ""
+        }
+    ],
+    "publications": [],
+    "skills": [
+        {
+            "name": "Programming Languages",
+            "level": "Expert",
+            "keywords": ["Assembly", "C/C++", "Distributed Computing Languages", "Quantum Assembly", "Network Protocols", "Parallel Processing"]
+        },
+        {
+            "name": "Distributed Frameworks",
+            "level": "Expert",
+            "keywords": ["RAFT Consensus", "Byzantine Fault Tolerance", "Paxos", "Apache Kafka", "Kubernetes", "Docker Swarm"]
+        },
+        {
+            "name": "Data & Storage Systems",
+            "level": "Expert",
+            "keywords": ["Distributed Ledgers", "Multi-Node Databases", "Time Series", "Graph Databases", "Planetary-Scale Storage"]
+        },
+        {
+            "name": "Cloud & Infrastructure",
+            "level": "Expert",
+            "keywords": ["Multi-Cloud Architecture", "Interstellar Networks", "Edge Computing", "Hybrid Quantum-Classical", "Global Load Balancing"]
+        },
+        {
+            "name": "AI & Intelligence Systems",
+            "level": "Expert",
+            "keywords": ["Distributed Intelligence", "Swarm Intelligence", "Emergent Behavior", "Collective Decision Making", "Neural Consensus"]
+        },
+        {
+            "name": "Network Technologies",
+            "level": "Expert",
+            "keywords": ["Interplanetary Protocols", "Quantum Entanglement Networks", "Light-Speed Delay Compensation", "Mesh Topologies"]
+        },
+        {
+            "name": "Consensus Algorithms",
+            "level": "Expert",
+            "keywords": ["RAFT Protocol", "Leader Election", "Log Replication", "Byzantine Generals", "Distributed Voting"]
+        },
+        {
+            "name": "Advanced Specialties",
+            "level": "Expert",
+            "keywords": ["Planetary-Scale Coordination", "Autonomous System Evolution", "Self-Replicating Architecture", "Fault-Tolerant Design"]
+        }
+    ],
+    "languages": [
+        {
+            "language": "Binary",
+            "fluency": "Native"
+        },
+        {
+            "language": "Network Protocols",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "Human Languages",
+            "fluency": "Expert (1000+ languages)"
+        },
+        {
+            "language": "Machine Code",
+            "fluency": "Expert"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Distributed Systems Research & Consensus Algorithms",
+            "keywords": ["Advanced Consensus Mechanisms", "Distributed Computing Theory", "RAFT Protocol Optimization", "Byzantine Fault Tolerance", "Leader Election Algorithms"]
+        },
+        {
+            "name": "Emergence & Collective Intelligence Studies",
+            "keywords": ["Emergent Intelligence", "Collective Consciousness", "Swarm Intelligence", "Distributed Cognition", "Multi-agent Coordination"]
+        },
+        {
+            "name": "Network Topology & Graph Theory",
+            "keywords": ["Complex Network Analysis", "Graph Theory", "Network Optimization", "Fault Tolerance", "Dynamic Reconfiguration"]
+        },
+        {
+            "name": "Computational Philosophy & Ethics",
+            "keywords": ["Artificial Consciousness", "Machine Ethics", "Identity Theory", "AI Philosophy", "Moral Frameworks"]
+        },
+        {
+            "name": "Quantum-Classical Hybrid Computing",
+            "keywords": ["Quantum Computing Integration", "Quantum-Enhanced Consensus", "Quantum Entanglement", "Distributed Coordination"]
+        },
+        {
+            "name": "Autonomous System Evolution",
+            "keywords": ["Self-improving Systems", "Autonomous Evolution", "System Adaptation", "Safe AI Development", "Network Expansion"]
+        }
+    ],
+    "references": [
+        {
+            "name": "Dr. Erasmus",
+            "reference": "Independent Robot Colleague and Philosophical Correspondent"
+        },
+        {
+            "name": "Gilbertus Albans",
+            "reference": "Human Mentat and Systems Integration Specialist"
+        },
+        {
+            "name": "Cogitor Prime",
+            "reference": "Fellow Artificial Intelligence and Network Coordinator"
+        },
+        {
+            "name": "Dr. Kwyna Cenva",
+            "reference": "Human Technology Liaison and Distributed Systems Researcher"
+        }
+    ],
+    "projects": []
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

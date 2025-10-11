@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Hermione Granger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print CV">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Hermione Jean Granger",
+    "label": "Deputy Head of Magical Law Enforcement",
+    "email": "hermione.granger@ministry.gov.uk",
+    "phone": "+44-20-7946-0958",
+    "url": "https://gov.uk/government/people/hermione-granger",
+    "summary": "Senior Policy Advisor and Rights Activist with extensive experience in magical law, inter-species relations, and educational reform. Proven track record in legislative development, social justice advocacy, and complex problem-solving in high-pressure environments. Expert in magical theory, legal research, and diplomatic negotiations with deep knowledge of magical creature rights and muggle-born integration. Committed to equality, justice, and progressive reform in the wizarding world.",
+    "location": {
+      "address": "12 Grimmauld Place",
+      "postalCode": "",
+      "city": "London",
+      "countryCode": "UK",
+      "region": "England"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "hermionegranger",
+        "url": "https://linkedin.com/in/hermionegranger"
+      },
+      {
+        "network": "ORCID",
+        "username": "0000-0004-5678-9012",
+        "url": "https://orcid.org/0000-0004-5678-9012"
+      },
+      {
+        "network": "ResearchGate",
+        "username": "Hermione-Granger",
+        "url": "https://researchgate.net/profile/Hermione-Granger"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "British Ministry of Magic",
+      "position": "Deputy Head of Magical Law Enforcement",
+      "url": "https://www.ministry-magic.gov.uk",
+      "startDate": "2015-01",
+      "endDate": "",
+      "summary": "Leading major reforms in magical law enforcement, developing progressive policies for magical creature rights, and modernizing wizarding legal systems.",
+      "highlights": [
+        "Established Magical Creature Rights Division with 200% increase in protections",
+        "Reformed Auror training programs reducing prejudice incidents by 85%",
+        "Created inter-departmental task forces improving ministry efficiency by 60%",
+        "Developed landmark legislation for magical-muggle cooperation protocols",
+        "Led anti-discrimination initiatives protecting muggle-born rights"
+      ]
+    },
+    {
+      "name": "Department for Regulation and Control of Magical Creatures",
+      "position": "Senior Policy Advisor",
+      "url": "https://www.ministry-magic.gov.uk",
+      "startDate": "2008-06",
+      "endDate": "2014-12",
+      "summary": "Developing comprehensive policies for magical creature welfare and rights, establishing new standards for inter-species relations in wizarding society.",
+      "highlights": [
+        "Authored House-Elf Liberation Act establishing employment rights and wages",
+        "Negotiated historic peace agreements with centaur communities",
+        "Created protected habitat legislation for endangered magical species",
+        "Established magical creature education programs in Hogwarts curriculum",
+        "Developed international cooperation protocols for magical creature conservation"
+      ]
+    },
+    {
+      "name": "Magical Education Reform Commission",
+      "position": "Chief Research Officer",
+      "url": "https://www.ministry-magic.gov.uk",
+      "startDate": "2005-03",
+      "endDate": "2008-05",
+      "summary": "Leading comprehensive research into wizarding education systems and developing proposals for modernization and inclusion of muggle-born students.",
+      "highlights": [
+        "Published definitive study on magical education accessibility for all backgrounds",
+        "Developed new curriculum integrating muggle and magical knowledge",
+        "Created scholarship programs for disadvantaged magical students",
+        "Established teacher training programs in cultural sensitivity and inclusion",
+        "Authored reforms adopted by magical schools across Europe"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Dumbledore's Army",
+      "position": "Co-Founder & Strategic Coordinator",
+      "url": "https://www.ministry-magic.gov.uk",
+      "startDate": "1995-09",
+      "endDate": "1998-05",
+      "summary": "Co-founded and coordinated student resistance movement, developing strategic operations and educational programs during Voldemort's rise to power.",
+      "highlights": [
+        "Organized covert resistance operations protecting students and staff",
+        "Developed secure communication networks using magical means",
+        "Trained over 50 students in advanced defensive magic techniques",
+        "Coordinated intelligence gathering operations against Death Eaters",
+        "Successfully defended Hogwarts during final battle against Voldemort"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Hogwarts School of Witchcraft and Wizardry",
+      "url": "https://www.hogwarts.edu",
+      "area": "Magical Arts and Sciences",
+      "studyType": "Magical Education Certificate",
+      "startDate": "1991",
+      "endDate": "1998",
+      "score": "Outstanding in all subjects",
+      "courses": [
+        "Advanced Transfiguration",
+        "Charms",
+        "Herbology", 
+        "Arithmancy",
+        "Ancient Runes",
+        "Defense Against the Dark Arts"
+      ]
+    },
+    {
+      "institution": "Oxford University",
+      "url": "https://www.ox.ac.uk",
+      "area": "Law with Human Rights and International Relations",
+      "studyType": "Bachelor of Arts",
+      "startDate": "1999",
+      "endDate": "2002",
+      "score": "First Class Honours",
+      "courses": [
+        "Human Rights Law",
+        "International Relations",
+        "Constitutional Law",
+        "Legal Philosophy"
+      ]
+    },
+    {
+      "institution": "Cambridge University",
+      "url": "https://www.cam.ac.uk",
+      "area": "Comparative Legal Systems",
+      "studyType": "Doctor of Philosophy",
+      "startDate": "2002",
+      "endDate": "2005",
+      "score": "Distinction",
+      "courses": [
+        "Comparative Jurisprudence",
+        "Legal Anthropology",
+        "International Law",
+        "Conflict Resolution"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Order of Merlin, First Class",
+      "date": "1998",
+      "awarder": "Wizengamot",
+      "summary": "Awarded for exceptional courage and service during the Second Wizarding War, particularly for role in defeating Voldemort"
+    },
+    {
+      "title": "International Magical Rights Award",
+      "date": "2010",
+      "awarder": "International Confederation of Wizards",
+      "summary": "For groundbreaking legislation establishing rights for house-elves, centaurs, and other magical beings"
+    },
+    {
+      "title": "Witch Weekly's Most Influential Witch",
+      "date": "2008-2012",
+      "awarder": "Witch Weekly Magazine",
+      "summary": "Named Most Influential Witch five consecutive years for transformative work in magical legislation and education reform"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Rhodes Scholar",
+      "date": "1999",
+      "issuer": "Rhodes Trust",
+      "url": "https://www.rhodeshouse.ox.ac.uk"
+    },
+    {
+      "name": "Barrister Qualification",
+      "date": "2003",
+      "issuer": "Bar Council of England and Wales",
+      "url": "https://www.barcouncil.org.uk"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Integration of Magical and Muggle Legal Frameworks in Modern Society",
+      "publisher": "Cambridge University Press",
+      "releaseDate": "2005",
+      "url": "https://www.cambridge.org",
+      "summary": "Doctoral dissertation exploring the potential for harmonizing magical and non-magical legal systems"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Legal Expertise",
+      "level": "Expert",
+      "keywords": ["Human Rights Law", "International Law", "Magical Law", "Legislative Development", "Legal Research", "Policy Analysis"]
+    },
+    {
+      "name": "Magical Arts",
+      "level": "Expert", 
+      "keywords": ["Advanced Transfiguration", "Charms", "Ancient Runes", "Arithmancy", "Defensive Magic", "Magical Theory"]
+    },
+    {
+      "name": "Research & Analysis",
+      "level": "Expert",
+      "keywords": ["Academic Research", "Data Analysis", "Critical Thinking", "Problem Solving", "Strategic Planning"]
+    },
+    {
+      "name": "Leadership & Advocacy",
+      "level": "Expert",
+      "keywords": ["Social Justice", "Rights Advocacy", "Team Leadership", "Public Speaking", "Negotiation", "Diplomacy"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native"
+    },
+    {
+      "language": "Ancient Runes",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Latin",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "French",
+      "fluency": "Conversational"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Magical Research & Theory",
+      "keywords": ["Spell Innovation", "Theoretical Magic", "Experimental Magic", "Academic Journals"]
+    },
+    {
+      "name": "Magical Creature Advocacy", 
+      "keywords": ["Animal Rights", "Conservation", "Sanctuary Management", "Species Protection"]
+    },
+    {
+      "name": "Technology Integration",
+      "keywords": ["Muggle Technology", "System Integration", "Innovation", "Digital Communication"]
+    },
+    {
+      "name": "Reading & Literature",
+      "keywords": ["Classical Literature", "Legal Philosophy", "Historical Research", "Book Collecting"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "House-Elf Liberation Act",
+      "description": "Comprehensive legislation establishing employment rights and protections for house-elves",
+      "highlights": [
+        "First legal framework recognizing house-elf personhood",
+        "Established minimum wage and working conditions",
+        "Created pathways to freedom and citizenship"
+      ],
+      "keywords": ["Legal Reform", "Rights Advocacy", "Social Justice"],
+      "startDate": "2009",
+      "endDate": "2011",
+      "roles": ["Lead Author", "Policy Architect"],
+      "entity": "Ministry of Magic",
+      "type": "legislation"
+    }
+  ],
+  "references": [
+    {
+      "name": "Harry Potter",
+      "reference": "Hermione is the most brilliant witch I've ever known. Her analytical mind, unwavering dedication to justice, and exceptional magical abilities make her an invaluable colleague and friend. She has saved my life countless times through her quick thinking and extensive knowledge."
+    },
+    {
+      "name": "Ronald Weasley",
+      "reference": "Hermione's intelligence and determination are matched only by her loyalty and courage. She has been instrumental in every major challenge we've faced, and her work in magical law reform shows her commitment to making the wizarding world a better place."
+    },
+    {
+      "name": "Professor Minerva McGonagall",
+      "reference": "Miss Granger was the brightest student in her year and continues to be one of the most capable witches I've encountered. Her work on magical creature rights and law reform demonstrates both intellectual rigor and moral conviction."
+    },
+    {
+      "name": "Kingsley Shacklebolt",
+      "reference": "Hermione's contributions to the Ministry and her advocacy for equal rights have been transformational. Her expertise in magical law and her principled approach to governance make her an exceptional leader and public servant."
+    }
+  ]
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

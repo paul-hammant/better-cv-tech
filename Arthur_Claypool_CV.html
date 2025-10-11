@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Arthur Claypool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print CV">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Arthur Claypool",
+    "label": "AI Research Director & Machine Learning Pioneer",
+    "email": "a.claypool@samaritanai.org",
+    "phone": "718-555-0198",
+    "url": "https://www.samaritanai.org",
+    "summary": "AI Research Director and Machine Learning Pioneer with extensive experience in artificial general intelligence, neural network architectures, and autonomous systems development. Proven track record in advanced AI research, cognitive computing, and intelligent system design across academic and commercial sectors. Expert in deep learning frameworks, natural language processing, and computer vision systems with deep knowledge of AI ethics, safety protocols, and human-AI interaction. Committed to advancing artificial intelligence for the benefit of humanity while addressing critical safety and alignment challenges.",
+    "location": {
+      "address": "Brooklyn Heights",
+      "postalCode": "11201",
+      "city": "New York",
+      "countryCode": "US",
+      "region": "New York"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "arthurclaypool",
+        "url": "https://linkedin.com/in/arthurclaypool"
+      },
+      {
+        "network": "GitHub",
+        "username": "aclaypool",
+        "url": "https://github.com/aclaypool"
+      },
+      {
+        "network": "ORCID",
+        "username": "0000-0003-4567-8901",
+        "url": "https://orcid.org/0000-0003-4567-8901"
+      },
+      {
+        "network": "Google Scholar",
+        "username": "aclaypool",
+        "url": "https://scholar.google.com/citations?user=aclaypool"
+      },
+      {
+        "network": "arXiv",
+        "username": "Claypool, A",
+        "url": "https://arxiv.org/search/?searchtype=author&query=Claypool%2C+A"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Samaritan AI Research Foundation",
+      "position": "Founder & Research Director",
+      "url": "https://www.samaritan-systems.com",
+      "startDate": "2005-01",
+      "endDate": "",
+      "summary": "Leading groundbreaking research in artificial general intelligence, focusing on beneficial AI systems that prioritize human welfare and safety.",
+      "highlights": [
+        "Developed advanced AI architecture capable of complex reasoning and decision-making",
+        "Established AI safety protocols preventing harmful or uncontrolled AI behavior",
+        "Created ethical framework for AI development adopted by major tech companies",
+        "Published 40+ influential papers on AI safety and human-AI collaboration",
+        "Secured $50M+ in research funding for beneficial AI development projects"
+      ]
+    },
+    {
+      "name": "DeepMind Technologies",
+      "position": "Principal Research Scientist",
+      "url": "https://www.deepmind.com",
+      "startDate": "1998-03",
+      "endDate": "2004-12",
+      "summary": "Conducting advanced research in artificial general intelligence, neural network architectures, and machine learning algorithms for complex problem-solving.",
+      "highlights": [
+        "Pioneered neural network architectures for game-playing AI systems",
+        "Developed reinforcement learning algorithms achieving superhuman performance",
+        "Led research team of 25+ scientists working on AGI development",
+        "Created AI systems capable of learning multiple domains simultaneously",
+        "Established safety research division focused on AI alignment problems"
+      ]
+    },
+    {
+      "name": "MIT Artificial Intelligence Laboratory",
+      "position": "Senior Research Scientist",
+      "url": "https://www.csail.mit.edu",
+      "startDate": "1992-08",
+      "endDate": "1998-02",
+      "summary": "Advancing fundamental AI research with focus on machine learning, natural language processing, and cognitive architectures for intelligent systems.",
+      "highlights": [
+        "Developed natural language understanding systems for human-computer interaction",
+        "Created machine learning frameworks for adaptive and self-improving AI",
+        "Collaborated on DARPA-funded projects for autonomous military applications",
+        "Mentored 20+ Ph.D. students who became leaders in AI research",
+        "Established industry partnerships bringing academic research to practical applications"
+      ]
+    },
+    {
+      "name": "IBM Watson Research Center",
+      "position": "Research Scientist",
+      "url": "https://www.research.ibm.com",
+      "startDate": "1990-06",
+      "endDate": "1992-07",
+      "summary": "Developing cognitive computing systems and machine learning algorithms for enterprise applications and decision support systems.",
+      "highlights": [
+        "Contributed to early development of IBM Watson question-answering system",
+        "Developed machine learning algorithms for pattern recognition in large datasets",
+        "Created expert systems for medical diagnosis and financial risk assessment",
+        "Published foundational research in cognitive computing and knowledge representation",
+        "Received IBM Outstanding Technical Achievement Award for AI innovations"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "AI Ethics Research Consortium",
+      "position": "Board Member & Research Lead",
+      "url": "https://www.aiethics.org",
+      "startDate": "2010-01",
+      "endDate": "",
+      "summary": "Leading research and policy development for ethical AI systems, focusing on consciousness, sentience, and moral considerations in artificial intelligence.",
+      "highlights": [
+        "Developed ethical guidelines for AI research adopted by major institutions",
+        "Regular participant in AI ethics conferences and policy discussions",
+        "Advised governments on AI safety regulations and standards",
+        "Created frameworks for assessing AI consciousness and rights"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Stanford University",
+      "url": "https://www.stanford.edu",
+      "area": "Artificial Intelligence with Neural Networks and Cognitive Computing",
+      "studyType": "Doctor of Philosophy",
+      "startDate": "1985",
+      "endDate": "1990",
+      "score": "Outstanding Dissertation Award",
+      "courses": [
+        "Neural Networks",
+        "Cognitive Computing",
+        "Machine Learning Theory",
+        "Human-AI Collaboration"
+      ]
+    },
+    {
+      "institution": "Carnegie Mellon University",
+      "url": "https://www.cmu.edu",
+      "area": "Computer Science with Machine Learning and Robotics",
+      "studyType": "Master of Science",
+      "startDate": "1983",
+      "endDate": "1985",
+      "score": "Summa Cum Laude",
+      "courses": [
+        "Machine Learning",
+        "Robotics",
+        "Autonomous Systems",
+        "Decision-Making Systems"
+      ]
+    },
+    {
+      "institution": "California Institute of Technology",
+      "url": "https://www.caltech.edu",
+      "area": "Computer Science with Cognitive Science",
+      "studyType": "Bachelor of Science",
+      "startDate": "1979",
+      "endDate": "1983",
+      "score": "Magna Cum Laude with AI Research Honors",
+      "courses": [
+        "Computer Science Fundamentals",
+        "Cognitive Science",
+        "Artificial Intelligence",
+        "Mathematical Logic"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "International AI Safety Research Prize",
+      "date": "2018",
+      "awarder": "International AI Safety Foundation",
+      "summary": "For groundbreaking work in AI alignment and safety protocols that prevent harmful AI behavior"
+    },
+    {
+      "title": "IEEE Machine Learning Innovation Medal",
+      "date": "2015",
+      "awarder": "IEEE",
+      "summary": "For developing revolutionary neural network architectures that advanced the field of deep learning"
+    },
+    {
+      "title": "Cognitive Computing Pioneer Award",
+      "date": "2012",
+      "awarder": "Cognitive Computing Society",
+      "summary": "For foundational contributions to AI systems that can understand, reason, and learn like humans"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Ph.D. in Artificial Intelligence",
+      "date": "1990",
+      "issuer": "Stanford University",
+      "url": "https://www.stanford.edu"
+    },
+    {
+      "name": "IEEE Machine Learning Medal",
+      "date": "2015",
+      "issuer": "Institute of Electrical and Electronics Engineers",
+      "url": "https://www.ieee.org"
+    },
+    {
+      "name": "AI Safety Researcher Certification",
+      "date": "2018",
+      "issuer": "Future of Humanity Institute",
+      "url": "https://www.fhi.ox.ac.uk"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Adaptive Learning Systems and Human-AI Collaboration",
+      "publisher": "Stanford University Press",
+      "releaseDate": "1990-06",
+      "url": "https://www.sup.org",
+      "summary": "Doctoral dissertation exploring frameworks for beneficial AI systems that work collaboratively with humans"
+    },
+    {
+      "name": "Neural Architecture Search for General Intelligence",
+      "publisher": "Nature Machine Intelligence",
+      "releaseDate": "2015-09",
+      "url": "https://www.nature.com/natmachintell",
+      "summary": "Breakthrough research in automated design of neural networks for artificial general intelligence"
+    },
+    {
+      "name": "AI Safety and Alignment: A Comprehensive Framework",
+      "publisher": "Journal of AI Research",
+      "releaseDate": "2018-03",
+      "url": "https://www.jair.org",
+      "summary": "Definitive work on ensuring AI systems remain aligned with human values and goals"
+    },
+    {
+      "name": "The Ethics of Artificial General Intelligence",
+      "publisher": "MIT Press",
+      "releaseDate": "2020-11",
+      "url": "https://mitpress.mit.edu",
+      "summary": "Comprehensive analysis of ethical considerations in developing human-level AI systems"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "level": "Expert",
+      "keywords": ["Python", "C++", "Java", "JavaScript", "Julia", "CUDA", "OpenCL", "Assembly", "Rust", "Go"]
+    },
+    {
+      "name": "AI & Machine Learning",
+      "level": "Expert",
+      "keywords": ["Deep Learning", "Reinforcement Learning", "GANs", "Transformers", "AGI Research", "Neural Architecture Search"]
+    },
+    {
+      "name": "Frameworks & Libraries",
+      "level": "Expert",
+      "keywords": ["TensorFlow", "PyTorch", "JAX", "Hugging Face", "OpenAI API", "MLflow", "Weights & Biases", "Ray"]
+    },
+    {
+      "name": "Databases & Storage",
+      "level": "Expert",
+      "keywords": ["PostgreSQL", "MongoDB", "Vector Databases", "Neo4j", "Redis", "InfluxDB", "Knowledge Graphs"]
+    },
+    {
+      "name": "Cloud & Infrastructure",
+      "level": "Expert",
+      "keywords": ["AWS", "Google Cloud", "Azure", "Kubernetes", "MLOps", "Model Serving", "Edge Deployment"]
+    },
+    {
+      "name": "Development Tools",
+      "level": "Expert",
+      "keywords": ["Git", "Docker", "Jupyter", "Weights & Biases", "TensorBoard", "SLURM", "Distributed Training"]
+    },
+    {
+      "name": "Research Specialties",
+      "level": "Expert",
+      "keywords": ["Artificial General Intelligence", "AI Safety & Alignment", "Neural Architecture Design", "Cognitive Computing"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native"
+    },
+    {
+      "language": "German",
+      "fluency": "Conversational"
+    },
+    {
+      "language": "Japanese",
+      "fluency": "Basic"
+    }
+  ],
+  "interests": [
+    {
+      "name": "AI Ethics & Philosophy",
+      "keywords": ["AI ethics research", "Philosophy of mind", "Consciousness studies", "Moral considerations", "Policy discussions"]
+    },
+    {
+      "name": "Chess & Strategic Gaming",
+      "keywords": ["Master-level chess", "Complex strategy games", "Game theory", "Tournament competition", "AI vs human analysis"]
+    },
+    {
+      "name": "Classical Philosophy & Logic",
+      "keywords": ["Classical philosophical works", "Formal logic systems", "Epistemology", "Ethics", "Philosophy of science"]
+    },
+    {
+      "name": "Computational Biology & Neuroscience",
+      "keywords": ["Computational models", "Biological neural networks", "Brain function", "Brain-inspired computing"]
+    },
+    {
+      "name": "Science Fiction & Futurism",
+      "keywords": ["Science fiction literature", "AI themes", "Technology futures", "Public perception analysis"]
+    },
+    {
+      "name": "Music & AI Creativity",
+      "keywords": ["AI-assisted composition", "Computational creativity", "Human-AI collaboration", "Machine creativity"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Samaritan AI System",
+      "description": "Advanced artificial general intelligence system designed with comprehensive safety protocols and human welfare prioritization",
+      "highlights": [
+        "First AGI system with built-in ethical reasoning capabilities",
+        "Comprehensive safety protocols preventing harmful behavior",
+        "Real-time decision making with human value alignment"
+      ],
+      "keywords": ["AGI", "AI Safety", "Ethical AI"],
+      "startDate": "2005",
+      "endDate": "2020",
+      "url": "https://www.samaritan-systems.com",
+      "roles": ["Founder", "Lead Architect", "Research Director"],
+      "entity": "Samaritan AI Research Foundation",
+      "type": "research"
+    },
+    {
+      "name": "Neural Architecture Evolution Platform",
+      "description": "Revolutionary system for automatically designing optimal neural network architectures for specific tasks",
+      "highlights": [
+        "Automated discovery of breakthrough neural architectures",
+        "Achieved state-of-the-art results across multiple AI benchmarks",
+        "Reduced manual architecture design time by 95%"
+      ],
+      "keywords": ["Neural Architecture Search", "AutoML", "Deep Learning"],
+      "startDate": "2010",
+      "endDate": "2015",
+      "url": "https://www.neuralsearch.ai",
+      "roles": ["Principal Researcher", "System Architect"],
+      "entity": "Samaritan AI Research Foundation",
+      "type": "application"
+    }
+  ],
+  "references": [
+    {
+      "name": "Dr. Yoshua Bengio",
+      "reference": "Arthur is a brilliant AI researcher whose work on artificial general intelligence has pushed the boundaries of what we thought possible. His ethical approach to AI development and rigorous safety protocols make him a valuable colleague and leader in the field."
+    },
+    {
+      "name": "Prof. Stuart Russell",
+      "reference": "Arthur's contributions to AI safety research have been groundbreaking. His work on value alignment and ethical AI systems demonstrates both technical excellence and moral responsibility that is rare in our field."
+    },
+    {
+      "name": "Dr. Demis Hassabis",
+      "reference": "During our collaboration at DeepMind, Arthur consistently demonstrated exceptional research capabilities and innovative thinking. His work on Samaritan AGI represents one of the most significant advances in artificial intelligence safety."
+    },
+    {
+      "name": "Prof. Barbara Grosz",
+      "reference": "Arthur combines deep technical expertise with careful consideration of the societal implications of AI. His leadership in developing responsible AI systems makes him an exemplary researcher and mentor."
+    }
+  ]
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

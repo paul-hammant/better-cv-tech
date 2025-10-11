@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Tony Stark</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print Resume">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Anthony Edward Stark",
+    "label": "Chief Executive Officer & Lead Inventor",
+    "email": "tony.stark@starkindustries.com",
+    "phone": "+1 (310) 555-IRON",
+    "url": "https://www.tonystark.com",
+    "summary": "Genius Inventor, Entrepreneur, and Philanthropist with expertise in advanced engineering, artificial intelligence, and sustainable energy systems. CEO of Stark Industries, developing cutting-edge technology for clean energy, medical applications, and global security. MIT graduate at 17 with multiple advanced degrees in Engineering and Physics. Holder of over 500 patents in fields ranging from clean energy to advanced materials science. Committed to using technology to solve global challenges and protect humanity.",
+    "location": {
+      "address": "10880 Malibu Point",
+      "postalCode": "90265",
+      "city": "Malibu",
+      "countryCode": "US",
+      "region": "California"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "tonystark",
+        "url": "https://linkedin.com/in/tonystark"
+      },
+      {
+        "network": "GitHub",
+        "username": "ironman",
+        "url": "https://github.com/ironman"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "Massachusetts Institute of Technology",
+      "url": "https://www.mit.edu",
+      "area": "Electrical Engineering and Physics",
+      "studyType": "Bachelor of Science",
+      "startDate": "1984",
+      "endDate": "1987",
+      "score": "Summa Cum Laude",
+      "courses": [
+        "Advanced Quantum Mechanics",
+        "Electromagnetic Theory",
+        "Circuit Design",
+        "Materials Science"
+      ]
+    },
+    {
+      "institution": "Massachusetts Institute of Technology",
+      "url": "https://www.mit.edu",
+      "area": "Engineering and Physics",
+      "studyType": "Master of Science & Ph.D.",
+      "startDate": "1987",
+      "endDate": "1991",
+      "score": "4.0/4.0",
+      "courses": [
+        "Advanced Theoretical Physics",
+        "Arc Reactor Technology",
+        "Plasma Physics",
+        "Energy Systems"
+      ]
+    },
+    {
+      "institution": "Stanford University",
+      "url": "https://www.stanford.edu",
+      "area": "Technology Management and International Business",
+      "studyType": "Master of Business Administration",
+      "startDate": "1991",
+      "endDate": "1993",
+      "score": "Graduated with Distinction",
+      "courses": [
+        "Strategic Management",
+        "International Business",
+        "Technology Innovation",
+        "Corporate Finance"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Nobel Prize in Physics",
+      "date": "2012",
+      "awarder": "The Nobel Committee",
+      "summary": "For breakthrough discoveries in clean fusion energy and contributions to global climate change mitigation"
+    },
+    {
+      "title": "Presidential Medal of Freedom",
+      "date": "2015",
+      "awarder": "President of the United States",
+      "summary": "For exceptional service to national security and advancement of American technological leadership"
+    },
+    {
+      "title": "Time Magazine Person of the Year",
+      "date": "2010",
+      "awarder": "Time Magazine",
+      "summary": "For contributions to clean energy technology and humanitarian efforts through the Stark Foundation"
+    },
+    {
+      "title": "Arc Reactor Technology Pioneer Award",
+      "date": "2008",
+      "awarder": "International Energy Association",
+      "summary": "Invented miniaturized Arc Reactor technology, revolutionizing clean energy production with 99.9% efficiency"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Professional Engineer (PE)",
+      "date": "1992",
+      "issuer": "California Board of Professional Engineers",
+      "url": "https://www.bpelsg.ca.gov"
+    },
+    {
+      "name": "IEEE Fellow",
+      "date": "2005",
+      "issuer": "Institute of Electrical and Electronics Engineers",
+      "url": "https://www.ieee.org"
+    },
+    {
+      "name": "ACM Distinguished Member",
+      "date": "2008",
+      "issuer": "Association for Computing Machinery",
+      "url": "https://www.acm.org"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "level": "Master",
+      "keywords": ["Python", "C++", "JavaScript", "TypeScript", "Assembly", "MATLAB", "R", "Julia"]
+    },
+    {
+      "name": "Frameworks & Libraries",
+      "level": "Master",
+      "keywords": ["TensorFlow", "PyTorch", "React", "Node.js", "ROS (Robot Operating System)", "Qt"]
+    },
+    {
+      "name": "Databases",
+      "level": "Master",
+      "keywords": ["PostgreSQL", "MongoDB", "Redis", "Cassandra", "Time Series DB", "GraphQL"]
+    },
+    {
+      "name": "Cloud & Infrastructure",
+      "level": "Master",
+      "keywords": ["AWS", "Azure", "Google Cloud", "Private Cloud Architecture", "Edge Computing"]
+    },
+    {
+      "name": "AI & Machine Learning",
+      "level": "Master",
+      "keywords": ["Neural Networks", "Computer Vision", "NLP", "Reinforcement Learning", "Quantum Computing"]
+    },
+    {
+      "name": "Hardware & Embedded",
+      "level": "Master",
+      "keywords": ["FPGA", "ASIC Design", "ARM Architecture", "Embedded Systems", "IoT", "Robotics"]
+    },
+    {
+      "name": "Tools & Software",
+      "level": "Master",
+      "keywords": ["CAD/CAM", "ANSYS", "Git", "Docker", "Kubernetes", "Jenkins", "Terraform"]
+    },
+    {
+      "name": "Security & Cryptography",
+      "level": "Master",
+      "keywords": ["Cryptography", "Blockchain", "Zero Trust Architecture", "Quantum Encryption"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native"
+    },
+    {
+      "language": "Mandarin",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Arabic",
+      "fluency": "Conversational"
+    },
+    {
+      "language": "Russian",
+      "fluency": "Basic"
+    }
+  ],
+  "work": [
+    {
+      "name": "Stark Industries",
+      "position": "Chief Executive Officer",
+      "url": "https://www.starkindustries.com",
+      "startDate": "1991-01",
+      "endDate": "",
+      "summary": "Leading multinational industrial company and defense contractor, transitioning from weapons manufacturing to clean energy and sustainable technology solutions.",
+      "highlights": [
+        "Increased company valuation from $20B to $300B+ over 30 years",
+        "Developed Arc Reactor technology reducing global carbon emissions by 15%",
+        "Created over 250,000 jobs worldwide in clean energy sector",
+        "Established Stark Foundation with $50B endowment for education and environmental causes",
+        "Holds 500+ patents in clean energy, AI, and advanced materials"
+      ]
+    },
+    {
+      "name": "The Avengers Initiative",
+      "position": "Founding Member & Technology Director",
+      "url": "https://www.avengers.org",
+      "startDate": "2008-05",
+      "endDate": "",
+      "summary": "Co-founded and provides technological support for Earth's premier superhero team, developing advanced equipment and strategic coordination systems.",
+      "highlights": [
+        "Designed and built Iron Man armor Mark I through Mark 85",
+        "Created FRIDAY AI system for global threat monitoring",
+        "Developed quantum tunnel technology for time travel applications",
+        "Built Avengers Compound with state-of-the-art training facilities",
+        "Successfully coordinated defense against multiple global extinction events"
+      ]
+    },
+    {
+      "name": "MIT",
+      "position": "Visiting Professor & Research Director",
+      "url": "https://www.mit.edu",
+      "startDate": "2005-09",
+      "endDate": "",
+      "summary": "Teaching advanced engineering courses and leading research initiatives in clean energy and artificial intelligence applications.",
+      "highlights": [
+        "Established $1B endowment for MIT clean energy research",
+        "Mentored over 500 students in advanced engineering programs",
+        "Published 50+ peer-reviewed papers in top engineering journals",
+        "Created partnerships with 20+ international research institutions"
+      ]
+    },
+    {
+      "name": "S.H.I.E.L.D.",
+      "position": "Special Technology Consultant",
+      "url": "https://www.shield.gov",
+      "startDate": "2008-06",
+      "endDate": "2014-12",
+      "summary": "Provided advanced technology solutions and strategic consulting for international security operations and threat assessment.",
+      "highlights": [
+        "Developed Helicarrier propulsion and stealth systems",
+        "Created advanced surveillance and tracking technologies",
+        "Designed protective equipment for field agents",
+        "Consulted on alien technology integration and countermeasures"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Stark Foundation",
+      "position": "Founder & Chairman",
+      "url": "https://www.starkfoundation.org",
+      "startDate": "2000-01",
+      "endDate": "",
+      "summary": "Leading philanthropic organization focused on education, clean energy research, and disaster relief worldwide.",
+      "highlights": [
+        "Funds 200+ scholarships annually for underrepresented students in engineering",
+        "Provided disaster relief to over 50 countries",
+        "Invested $10B in clean energy research grants",
+        "Built 30 schools in developing nations"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "name": "Advanced Theoretical Applications in Arc Reactor Technology",
+      "publisher": "MIT Press",
+      "releaseDate": "1991-06",
+      "url": "https://mitpress.mit.edu",
+      "summary": "Doctoral dissertation outlining the theoretical framework for miniaturized fusion reactors."
+    },
+    {
+      "name": "Sustainable Energy Solutions for the 21st Century",
+      "publisher": "Nature Energy",
+      "releaseDate": "2010-03",
+      "url": "https://nature.com/nenergy",
+      "summary": "Comprehensive review of clean energy technologies and their potential global impact."
+    },
+    {
+      "name": "Artificial Intelligence and Ethical Computing",
+      "publisher": "Science Magazine",
+      "releaseDate": "2015-11",
+      "url": "https://science.org",
+      "summary": "Analysis of AI safety frameworks and guidelines for responsible AI development."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Arc Reactor Technology",
+      "description": "Miniaturized fusion reactor providing clean, sustainable energy",
+      "highlights": [
+        "99.9% energy efficiency achieved",
+        "Zero carbon emissions",
+        "Powers entire Stark Industries facilities worldwide"
+      ],
+      "keywords": ["Clean Energy", "Fusion", "Sustainability"],
+      "startDate": "2006",
+      "endDate": "2008",
+      "url": "https://www.starkindustries.com/arc-reactor",
+      "roles": ["Lead Inventor", "Principal Engineer"],
+      "entity": "Stark Industries",
+      "type": "application"
+    },
+    {
+      "name": "Iron Man Armor Development",
+      "description": "Advanced powered exoskeleton suits for defense and rescue operations",
+      "highlights": [
+        "85 iterations developed and tested",
+        "Integrated AI assistance systems",
+        "Modular design for various mission profiles"
+      ],
+      "keywords": ["Robotics", "AI", "Defense Technology"],
+      "startDate": "2008",
+      "endDate": "",
+      "url": "https://www.starkindustries.com/iron-man",
+      "roles": ["Designer", "Engineer", "Test Pilot"],
+      "entity": "Stark Industries",
+      "type": "application"
+    },
+    {
+      "name": "FRIDAY AI System",
+      "description": "Advanced artificial intelligence for threat assessment and coordination",
+      "highlights": [
+        "Natural language processing capabilities",
+        "Real-time global threat monitoring",
+        "Integrated with Avengers systems"
+      ],
+      "keywords": ["AI", "Machine Learning", "NLP"],
+      "startDate": "2012",
+      "endDate": "2015",
+      "url": "https://www.avengers.org/friday",
+      "roles": ["Lead Developer", "AI Architect"],
+      "entity": "Avengers Initiative",
+      "type": "application"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Automotive Engineering",
+      "keywords": ["High-performance vehicles", "Electric vehicles", "Classic cars", "Formula 1"]
+    },
+    {
+      "name": "Extreme Sports & Aviation",
+      "keywords": ["Piloting jets", "Helicopters", "Rock climbing", "Deep-sea diving"]
+    },
+    {
+      "name": "Art & Architecture",
+      "keywords": ["Modern art", "Industrial design", "Contemporary artists", "Architectural design"]
+    },
+    {
+      "name": "Fine Dining & Wine",
+      "keywords": ["International cuisine", "Wine collecting", "Rare vintages", "Charity auctions"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Virginia 'Pepper' Potts",
+      "reference": "Tony has been an exceptional leader and innovator during his tenure as CEO. His vision for clean energy and sustainable technology has transformed not only Stark Industries but the entire industry. I highly recommend him for any executive or technology leadership position."
+    },
+    {
+      "name": "James 'Rhodey' Rhodes",
+      "reference": "I've known Tony for over two decades, both personally and professionally. His technical expertise and leadership capabilities are unmatched. He consistently delivers innovative solutions under pressure and has been instrumental in numerous critical missions."
+    },
+    {
+      "name": "Nick Fury",
+      "reference": "Stark has provided invaluable technological consultation and strategic support for our operations. His ability to rapidly develop cutting-edge solutions and adapt to complex challenges makes him an exceptional asset to any organization."
+    },
+    {
+      "name": "Dr. Bruce Banner",
+      "reference": "Tony is a brilliant scientist and engineer whose collaborative approach and innovative thinking have been essential to our research breakthroughs. His leadership in both technical and strategic matters is exemplary."
+    }
+  ]
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

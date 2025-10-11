@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Donald Duck</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print CV">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Donald Fauntleroy Duck",
+    "label": "Animated Character & Entertainment Professional",
+    "email": "donald.duck@disney.com",
+    "phone": "1-800-BAD-DUCK",
+    "url": "https://www.disney.com/characters/donald-duck",
+    "summary": "One of the most popular Disney cartoon characters, making debut in 1934 and surpassing Mickey Mouse in cartoon production during the 1940s. Known for distinctive voice, fiery temper, and endearing personality that has entertained audiences for nearly 90 years. Featured in 128 Donald Duck cartoons and numerous appearances with other Disney characters.",
+    "location": {
+      "address": "1313 Webfoot Walk",
+      "postalCode": "12345",
+      "city": "Duckburg",
+      "countryCode": "CS",
+      "region": "Calisota"
+    },
+    "profiles": [
+      {
+        "network": "Disney",
+        "username": "donald-duck",
+        "url": "https://www.disney.com/characters/donald-duck"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Square Enix",
+      "position": "Video Game Character - Kingdom Hearts Series",
+      "url": "https://www.square-enix.com",
+      "startDate": "2002-06",
+      "endDate": "2002-09",
+      "summary": "Featured character in Kingdom Hearts, combining Disney characters with Square's Final Fantasy series.",
+      "highlights": [
+        "Demonstrated magical abilities in combat system",
+        "Advanced artificial intelligence programming for character behavior",
+        "Contributed to innovative Disney-Final Fantasy crossover concept",
+        "Enhanced character development through voice acting and animation"
+      ]
+    },
+    {
+      "name": "Walt Disney Pictures",
+      "position": "Animated Character - Who Framed Roger Rabbit",
+      "url": "https://www.disney.com",
+      "startDate": "1988-06",
+      "endDate": "1988-09",
+      "summary": "Featured in groundbreaking live-action/animation hybrid film depicting cartoon character interaction with humans.",
+      "highlights": [
+        "Performed in memorable piano duel sequence",
+        "Collaborated effectively with live-action and animated cast",
+        "Contributed to revolutionary filmmaking techniques"
+      ]
+    },
+    {
+      "name": "Walt Disney Pictures",
+      "position": "Lead Character - The Three Caballeros",
+      "url": "https://www.disney.com",
+      "startDate": "1944-12",
+      "endDate": "1945-02",
+      "summary": "Starred in first feature-length film as main character, exploring Latin American culture and friendship.",
+      "highlights": [
+        "First feature film with Donald Duck as primary starring character",
+        "Pioneered innovative live-action/animation integration techniques",
+        "Showcased cultural diversity and international cooperation themes"
+      ]
+    },
+    {
+      "name": "Walt Disney Pictures",
+      "position": "Lead Character - Der Fuehrer's Face",
+      "url": "https://www.disney.com",
+      "startDate": "1943-01",
+      "endDate": "1943-01",
+      "summary": "Starred in Academy Award-winning animated short film serving as anti-Nazi propaganda during World War II.",
+      "highlights": [
+        "Won Academy Award for Best Animated Short Film",
+        "Delivered important wartime morale and propaganda messaging",
+        "Showcased Disney's commitment to the war effort"
+      ]
+    },
+    {
+      "name": "Walt Disney Pictures",
+      "position": "Featured Character - Saludos Amigos",
+      "url": "https://www.disney.com",
+      "startDate": "1942-08",
+      "endDate": "1942-11",
+      "summary": "Appeared in animated anthology film exploring South American culture and building international relationships.",
+      "highlights": [
+        "Introduced Donald to international audiences",
+        "Demonstrated cultural sensitivity and educational entertainment",
+        "Featured groundbreaking animation techniques for the 1940s"
+      ]
+    },
+    {
+      "name": "Walt Disney Pictures",
+      "position": "Lead Character - Don Donald",
+      "url": "https://www.disney.com",
+      "startDate": "1937-06",
+      "endDate": "1937-09",
+      "summary": "Starred in first cartoon of the Donald Duck series, establishing character relationships and personality traits.",
+      "highlights": [
+        "First installment of the Donald Duck series",
+        "First to feature Donald as the primary starring character",
+        "First to introduce a love interest for Donald"
+      ]
+    },
+    {
+      "name": "Walt Disney Pictures",
+      "position": "Supporting Character - Orphan's Benefit",
+      "url": "https://www.disney.com",
+      "startDate": "1934-06",
+      "endDate": "1934-09",
+      "summary": "Early appearance establishing character traits and animation techniques that would define Donald Duck's personality.",
+      "highlights": [
+        "First collaboration with Mickey Mouse",
+        "Significant character development and personality establishment",
+        "Pioneered character animation techniques for personality expression"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "US Coast Guard",
+      "position": "Mascot",
+      "url": "https://www.uscg.mil",
+      "startDate": "1940-01",
+      "endDate": "1945-12",
+      "summary": "Served as authorized mascot for the US Coast Guard during World War II, promoting coastal defense and maritime safety.",
+      "highlights": [
+        "Appeared in recruiting and safety materials",
+        "Promoted coastal defense awareness",
+        "Boosted morale among Coast Guard personnel"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Calisota University",
+      "url": "https://pearlandruby.miraheze.org/wiki/Calisota_City_University",
+      "area": "Ship Building",
+      "studyType": "Bachelor of Science",
+      "startDate": "2006",
+      "endDate": "2009",
+      "score": "Upper Second Class Honours",
+      "courses": [
+        "21st Century Ship Building",
+        "Naval Architecture",
+        "Marine Engineering",
+        "Maritime Technology"
+      ]
+    },
+    {
+      "institution": "Calisota College",
+      "url": "https://www.calisotacollege.edu",
+      "area": "Foundation Studies",
+      "studyType": "Foundation Year",
+      "startDate": "2003",
+      "endDate": "2005",
+      "score": "Pass",
+      "courses": [
+        "21st Century Ship Building Pathway",
+        "Engineering Fundamentals",
+        "Mathematics",
+        "Technical Drawing"
+      ]
+    },
+    {
+      "institution": "Calisota College",
+      "url": "https://www.calisotacollege.edu",
+      "area": "A-Level Studies",
+      "studyType": "A-Levels",
+      "startDate": "2001",
+      "endDate": "2003",
+      "score": "A in Maths, B in Engineering, D in Biology",
+      "courses": [
+        "Advanced Mathematics",
+        "Engineering",
+        "Biology"
+      ]
+    },
+    {
+      "institution": "Calisota High School for Ducks",
+      "url": "https://www.duckburghschools.edu",
+      "area": "High School Studies",
+      "studyType": "High School Diploma",
+      "startDate": "1999",
+      "endDate": "2000",
+      "score": "A in Maths, B in Engineering, D in Biology",
+      "courses": [
+        "Mathematics",
+        "Engineering",
+        "Biology"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Academy Award for Best Animated Short Film",
+      "date": "1943",
+      "awarder": "Academy of Motion Picture Arts and Sciences",
+      "summary": "Won for 'Der Fuehrer's Face', a wartime propaganda cartoon showcasing exceptional animation and storytelling"
+    },
+    {
+      "title": "Character Animation Pioneer",
+      "date": "1940",
+      "awarder": "Disney Studios",
+      "summary": "Pioneered character animation techniques to physically convey personality traits, becoming industry standard"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Bachelor of Science in Ship Building",
+      "date": "2009",
+      "issuer": "Calisota University",
+      "url": "https://pearlandruby.miraheze.org/wiki/Calisota_City_University"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Animation & Character Performance",
+      "level": "Master",
+      "keywords": ["Character Animation", "Voice Acting", "Physical Comedy", "Personality Expression", "Emotional Range"]
+    },
+    {
+      "name": "Entertainment & Media",
+      "level": "Expert",
+      "keywords": ["Film Production", "Television", "Video Games", "Comic Strips", "Merchandising"]
+    },
+    {
+      "name": "Engineering & Technical",
+      "level": "Advanced",
+      "keywords": ["Ship Building", "Naval Architecture", "Marine Engineering", "Technical Drawing"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native (with distinctive quack)"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Conversational"
+    },
+    {
+      "language": "Portuguese",
+      "fluency": "Basic"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Sports & Mascot Activities",
+      "keywords": ["Soccer", "Brazilian football", "Sports mascoting", "Team spirit", "Athletic competitions"]
+    },
+    {
+      "name": "Commercial & Brand Representation",
+      "keywords": ["Product endorsements", "Orange juice", "Brand marketing", "Commercial appearances"]
+    },
+    {
+      "name": "Military & Patriotic Service",
+      "keywords": ["Coast Guard support", "Wartime morale", "Military mascot", "Patriotic duty"]
+    },
+    {
+      "name": "Cultural Impact & References",
+      "keywords": ["Popular culture", "Music references", "Media appearances", "Cultural commentary"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Donald Duck Comic Strip Series",
+      "description": "Daily newspaper comic strip featuring Donald Duck, running continuously since 1938",
+      "highlights": [
+        "Longest-running comic strip featuring Donald Duck",
+        "Daily publication across multiple newspapers worldwide",
+        "Consistent character development over decades"
+      ],
+      "keywords": ["Comic Strip", "Print Media", "Character Development"],
+      "startDate": "1938",
+      "endDate": "",
+      "url": "https://www.disney.com/comics",
+      "roles": ["Main Character"],
+      "entity": "Walt Disney Productions",
+      "type": "media"
+    }
+  ],
+  "references": [
+    {
+      "name": "Mickey Mouse",
+      "reference": "Donald has been a dedicated colleague and friend for over 80 years. His enthusiasm and distinctive personality have made him one of Disney's most beloved characters. He brings energy and passion to every project."
+    },
+    {
+      "name": "Daisy Duck",
+      "reference": "As Donald's partner, I can attest to his loyalty, creativity, and unwavering commitment to entertaining audiences worldwide. His unique voice and character have brought joy to millions of fans across generations."
+    }
+  ]
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

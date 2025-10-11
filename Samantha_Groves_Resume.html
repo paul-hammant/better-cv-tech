@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Samantha Groves</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print Resume">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "Samantha Groves",
+        "label": "Senior Cybersecurity Engineer",
+        "image": "",
+        "email": "s.groves@securecomm.tech",
+        "phone": "718-555-0147",
+        "url": "https://securecomm.tech/team/s-groves",
+        "summary": "**Senior Cybersecurity Engineer** and **Ethical Hacker** with extensive experience in **penetration testing**, **network security**, and **digital forensics**. Proven track record in **vulnerability assessment**, **threat analysis**, and **security architecture** across enterprise and government environments.\n\nExpert in **advanced persistent threat detection**, **cryptographic systems**, and **secure communications** with deep knowledge of **zero-day exploits** and **defensive countermeasures**. Committed to protecting digital infrastructure and advancing cybersecurity practices.",
+        "location": {
+            "address": "",
+            "postalCode": "11201",
+            "city": "Brooklyn",
+            "countryCode": "US",
+            "region": "NY"
+        },
+        "profiles": [
+            {
+                "network": "LinkedIn",
+                "username": "samanthagroves",
+                "url": "https://linkedin.com/in/samanthagroves"
+            },
+            {
+                "network": "GitHub",
+                "username": "rootsec",
+                "url": "https://github.com/rootsec"
+            },
+            {
+                "network": "HackerOne",
+                "username": "rootsec",
+                "url": "https://hackerone.com/rootsec"
+            },
+            {
+                "network": "Bugcrowd",
+                "username": "rootsec",
+                "url": "https://bugcrowd.com/rootsec"
+            }
+        ]
+    },
+    "work": [
+        {
+            "name": "SecureComm Technologies",
+            "position": "Senior Cybersecurity Engineer",
+            "url": "https://www.securecomm.tech",
+            "startDate": "2020-01",
+            "endDate": null,
+            "summary": "Leading advanced cybersecurity operations and developing next-generation security solutions for enterprise clients and government agencies.",
+            "highlights": [
+                "Designed and implemented zero-trust security architecture for Fortune 500 clients.",
+                "Led red team exercises resulting in 95% improvement in client security posture.",
+                "Developed proprietary threat detection system reducing false positives by 80%.",
+                "Managed team of 12 security engineers and penetration testers.",
+                "Created secure communication protocols for sensitive government operations."
+            ]
+        },
+        {
+            "name": "CyberDefense Solutions",
+            "position": "Principal Security Consultant",
+            "url": "https://www.securecomm.tech",
+            "startDate": "2016-03",
+            "endDate": "2019-12",
+            "summary": "Providing expert cybersecurity consulting services specializing in penetration testing, incident response, and security architecture for high-profile clients.",
+            "highlights": [
+                "Conducted penetration tests for 200+ organizations including banks and hospitals.",
+                "Developed incident response playbooks adopted industry-wide.",
+                "Led forensic investigations for major data breaches and cyber attacks.",
+                "Trained over 500 security professionals in advanced hacking techniques.",
+                "Published research on advanced persistent threats and nation-state actors."
+            ]
+        },
+        {
+            "name": "Digital Fortress Consulting",
+            "position": "Security Research Engineer",
+            "url": "https://www.securecomm.tech",
+            "startDate": "2013-06",
+            "endDate": "2016-02",
+            "summary": "Conducting cutting-edge security research and developing innovative solutions for complex cybersecurity challenges in both private and public sectors.",
+            "highlights": [
+                "Reverse-engineered sophisticated malware families for threat intelligence.",
+                "Developed custom exploitation tools for authorized penetration testing.",
+                "Collaborated with international law enforcement on cybercrime investigations.",
+                "Created automated vulnerability scanning framework used by 1000+ organizations.",
+                "Presented research at Black Hat, DEF CON, and RSA conferences."
+            ]
+        },
+        {
+            "name": "TechStart Security",
+            "position": "Junior Penetration Tester",
+            "url": "https://www.securecomm.tech",
+            "startDate": "2011-08",
+            "endDate": "2013-05",
+            "summary": "Entry-level penetration testing role focusing on web application security, network assessments, and vulnerability research.",
+            "highlights": [
+                "Performed security assessments for 50+ web applications and networks.",
+                "Discovered critical vulnerabilities in popular open-source software.",
+                "Developed proof-of-concept exploits for newly discovered vulnerabilities.",
+                "Achieved OSCP certification within first year of employment.",
+                "Contributed to open-source security testing tools and methodologies."
+            ]
+        }
+    ],
+    "volunteer": [],
+    "education": [
+        {
+            "institution": "MIT",
+            "url": "",
+            "area": "Computer Science",
+            "studyType": "Bachelor of Science",
+            "startDate": "2005",
+            "endDate": "2009",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "Stanford University",
+            "url": "",
+            "area": "Cybersecurity",
+            "studyType": "Master of Science",
+            "startDate": "2009",
+            "endDate": "2011",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "SANS Institute",
+            "url": "",
+            "area": "Security",
+            "studyType": "GIAC Security Expert (GSE)",
+            "startDate": "2012",
+            "endDate": "2013",
+            "score": "",
+            "courses": []
+        }
+    ],
+    "awards": [
+        {
+            "title": "DEF CON Black Badge Winner",
+            "date": "",
+            "awarder": "DEF CON",
+            "summary": "Awarded **DEF CON Black Badge** for winning the prestigious Capture The Flag competition, demonstrating elite hacking skills."
+        },
+        {
+            "title": "CVE Researcher",
+            "date": "",
+            "awarder": "Various Vendors",
+            "summary": "Discovered and responsibly disclosed **15+ critical vulnerabilities** (CVEs) in major software platforms, earning recognition from vendors."
+        },
+        {
+            "title": "Cybersecurity Innovation Award",
+            "date": "2020",
+            "awarder": "National Cybersecurity Institute",
+            "summary": "Recipient of **National Cybersecurity Innovation Award** (2020) for developing novel threat detection algorithms."
+        }
+    ],
+    "certificates": [
+        {
+            "name": "CISSP",
+            "date": "",
+            "issuer": "ISC2",
+            "url": ""
+        },
+        {
+            "name": "CEH",
+            "date": "",
+            "issuer": "EC-Council",
+            "url": ""
+        },
+        {
+            "name": "OSCP",
+            "date": "",
+            "issuer": "Offensive Security",
+            "url": ""
+        },
+        {
+            "name": "GIAC GSE",
+            "date": "",
+            "issuer": "SANS Institute",
+            "url": ""
+        },
+        {
+            "name": "Security+ CE",
+            "date": "",
+            "issuer": "CompTIA",
+            "url": ""
+        },
+        {
+            "name": "AWS Certified Security",
+            "date": "",
+            "issuer": "Amazon Web Services",
+            "url": ""
+        },
+        {
+            "name": "SANS FOR508",
+            "date": "",
+            "issuer": "SANS Institute",
+            "url": ""
+        }
+    ],
+    "publications": [],
+    "skills": [
+        {
+            "name": "Programming Languages",
+            "level": "Expert",
+            "keywords": ["Python", "C/C++", "Assembly", "JavaScript", "Go", "Rust", "PowerShell", "Bash", "SQL", "R"]
+        },
+        {
+            "name": "Security Frameworks & Tools",
+            "level": "Expert",
+            "keywords": ["Metasploit", "Burp Suite", "Wireshark", "Nmap", "Kali Linux", "OWASP ZAP", "Cobalt Strike", "Empire"]
+        },
+        {
+            "name": "Databases",
+            "level": "Advanced",
+            "keywords": ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch", "InfluxDB", "Neo4j", "Cassandra"]
+        },
+        {
+            "name": "Cloud Security",
+            "level": "Expert",
+            "keywords": ["AWS Security", "Azure Security Center", "Google Cloud Security", "Kubernetes Security", "Docker Security"]
+        },
+        {
+            "name": "AI/ML & Security",
+            "level": "Expert",
+            "keywords": ["TensorFlow", "PyTorch", "Scikit-learn", "LLM Training", "BERT", "GPT Fine-tuning", "Adversarial ML", "AI Red Teaming"]
+        },
+        {
+            "name": "Security Specialties",
+            "level": "Expert",
+            "keywords": ["Penetration Testing", "Vulnerability Assessment", "Digital Forensics", "Incident Response", "Threat Hunting", "SIEM"]
+        },
+        {
+            "name": "DevOps & Tools",
+            "level": "Advanced",
+            "keywords": ["Docker", "Git", "Jenkins", "Ansible", "Terraform", "Splunk", "ELK Stack", "Volatility", "Ghidra", "IDA Pro"]
+        },
+        {
+            "name": "Advanced Specialties",
+            "level": "Expert",
+            "keywords": ["Zero-day Research", "Cryptanalysis", "Social Engineering", "Network Architecture", "Malware Analysis"]
+        },
+        {
+            "name": "Tactical Skills",
+            "level": "Advanced",
+            "keywords": ["Tactical Shooting", "Precision Marksmanship", "Combat Training", "Weapons Systems", "Range Safety Officer"]
+        }
+    ],
+    "languages": [],
+    "interests": [
+        {
+            "name": "Cybersecurity Research & Bug Bounty",
+            "keywords": ["Zero-day Discovery", "Exploit Development", "HackerOne", "Bugcrowd", "Security Research"]
+        },
+        {
+            "name": "AI/ML Security & LLM Research",
+            "keywords": ["Adversarial ML", "AI Red Teaming", "Prompt Injection", "Model Poisoning", "LLM Security"]
+        },
+        {
+            "name": "Capture The Flag Competitions",
+            "keywords": ["CTF", "Reverse Engineering", "Cryptography", "Web Exploitation", "NullSec Team"]
+        },
+        {
+            "name": "Tactical Firearms & Marksmanship",
+            "keywords": ["Tactical Shooting", "Precision Firearms", "Range Safety", "Combat Training", "Competitive Shooting"]
+        },
+        {
+            "name": "Digital Privacy Advocacy",
+            "keywords": ["Digital Rights", "Privacy Protection", "Secure Communications", "Internet Freedom", "Anti-Censorship"]
+        },
+        {
+            "name": "Open Source Security Tools",
+            "keywords": ["GitHub Projects", "Penetration Testing Tools", "Security Scanners", "Educational Resources", "Community Development"]
+        }
+    ],
+    "references": [
+        {
+            "name": "Dr. Sarah Chen",
+            "reference": "Former MIT Professor and Thesis Advisor"
+        },
+        {
+            "name": "Marcus Rodriguez",
+            "reference": "Former Manager and Security Architect"
+        },
+        {
+            "name": "Alex Thompson",
+            "reference": "Current CTO and Direct Supervisor"
+        },
+        {
+            "name": "Dr. Elena Volkov",
+            "reference": "Graduate School Advisor and Research Mentor"
+        }
+    ],
+    "projects": []
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

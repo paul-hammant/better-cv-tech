@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Lorem Ipsum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print Resume">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Lorem Ipsum Dolor",
+    "label": "Senior Consectetur Adipiscing & Elit Specialist",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/A_man_having_an_idea_before_the_light_bulp.jpg/512px-A_man_having_an_idea_before_the_light_bulp.jpg",
+    "email": "lorem.ipsum@dolorsite.com",
+    "phone": "+1 (555) 123-4567",
+    "url": "https://www.loremipsum.com",
+    "summary": "Lorem ipsum dolor sit amet, **consectetur adipiscing elit**, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. **Duis aute irure dolor** in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+    "location": {
+      "address": "123 Adipiscing Avenue",
+      "postalCode": "12345",
+      "city": "Consectetur City",
+      "countryCode": "US",
+      "region": "Lorem State"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "loremipsum",
+        "url": "https://linkedin.com/in/loremipsum"
+      },
+      {
+        "network": "GitHub",
+        "username": "lorem-dolor",
+        "url": "https://github.com/lorem-dolor"
+      },
+      {
+        "network": "Twitter",
+        "username": "lorem_tweets",
+        "url": "https://twitter.com/lorem_tweets"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "University of Lorem Ipsum",
+      "url": "https://www.lorem.edu",
+      "area": "Dolor Studies with concentration in Sit Amet",
+      "studyType": "Bachelor of Science",
+      "startDate": "2015",
+      "endDate": "2019",
+      "score": "Magna Cum Laude - 3.85 GPA",
+      "courses": [
+        "Advanced Lorem Theory",
+        "Ipsum Methodologies",
+        "Dolor Applications",
+        "Consectetur Systems"
+      ]
+    },
+    {
+      "institution": "Adipiscing Institute of Technology",
+      "url": "https://www.ait.edu",
+      "area": "Applied Consectetur Sciences",
+      "studyType": "Master of Science",
+      "startDate": "2019",
+      "endDate": "2021",
+      "score": "4.0/4.0",
+      "courses": [
+        "Quantum Lorem Mechanics",
+        "Advanced Ipsum Architecture",
+        "Machine Learning in Dolor",
+        "Distributed Consectetur Systems"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Excellence in Lorem Innovation Award",
+      "date": "2023",
+      "awarder": "International Lorem Society",
+      "summary": "Recognized for groundbreaking contributions to the field of Lorem Ipsum dolor sit amet, consectetur adipiscing elit methodology"
+    },
+    {
+      "title": "Ipsum Distinguished Achievement Medal",
+      "date": "2022",
+      "awarder": "Global Consectetur Foundation",
+      "summary": "Awarded for exceptional leadership in advancing dolor sit amet technologies and their practical applications"
+    },
+    {
+      "title": "Rising Star in Adipiscing",
+      "date": "2021",
+      "awarder": "Lorem Professional Association",
+      "summary": "Selected from over 1000 nominees for innovative approaches to elit sed do eiusmod tempor incididunt"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certified Lorem Professional (CLP)",
+      "date": "2021",
+      "issuer": "Lorem Certification Board",
+      "url": "https://www.loremcert.org"
+    },
+    {
+      "name": "Advanced Ipsum Practitioner",
+      "date": "2022",
+      "issuer": "Institute of Ipsum Excellence",
+      "url": "https://www.ipsuminstitute.org"
+    },
+    {
+      "name": "Dolor Management Specialist",
+      "date": "2023",
+      "issuer": "International Dolor Association",
+      "url": "https://www.dolor.org"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Lorem Technologies",
+      "level": "Expert",
+      "keywords": ["Lorem Framework", "Ipsum.js", "DolorDB", "Consectetur API", "Adipiscing Cloud", "Elit Services"]
+    },
+    {
+      "name": "Ipsum Development",
+      "level": "Advanced",
+      "keywords": ["Sed Script", "Tempor++", "Incididunt", "Labore Language", "Dolore IDE", "Magna Tools"]
+    },
+    {
+      "name": "Dolor Engineering",
+      "level": "Advanced",
+      "keywords": ["Aliqua Systems", "Enim Architecture", "Minim Patterns", "Veniam Protocol", "Quis Framework"]
+    },
+    {
+      "name": "Consectetur Management",
+      "level": "Expert",
+      "keywords": ["Nostrud Methodology", "Exercitation Process", "Ullamco Standards", "Laboris Practices", "Aliquip Strategy"]
+    },
+    {
+      "name": "Adipiscing Operations",
+      "level": "Advanced",
+      "keywords": ["Commodo Deployment", "Consequat CI/CD", "Duis Monitoring", "Irure Analytics", "Reprehenderit Security"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Lorem",
+      "fluency": "Native"
+    },
+    {
+      "language": "Ipsum",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Dolor",
+      "fluency": "Professional"
+    },
+    {
+      "language": "Consectetur",
+      "fluency": "Conversational"
+    }
+  ],
+  "work": [
+    {
+      "name": "Lorem Ipsum Corporation",
+      "position": "Senior Dolor Engineer",
+      "url": "https://www.loremcorp.com",
+      "startDate": "2022-01",
+      "endDate": "",
+      "description": "Global leader in Lorem Ipsum technologies and consectetur solutions",
+      "summary": "Leading the development of next-generation Lorem Ipsum solutions, focusing on consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua systems.",
+      "location": "Consectetur City, Lorem State",
+      "highlights": [
+        "Architected and deployed Lorem Ipsum platform serving 10M+ daily active users",
+        "Reduced dolor processing time by 75% through innovative consectetur algorithms",
+        "Led team of 15 engineers in adipiscing elit transformation initiative",
+        "Implemented sed do eiusmod framework resulting in 40% cost reduction",
+        "Pioneered tempor incididunt methodology now industry standard"
+      ]
+    },
+    {
+      "name": "Consectetur Technologies Inc.",
+      "position": "Ipsum Development Lead",
+      "url": "https://www.consectetur-tech.com",
+      "startDate": "2020-06",
+      "endDate": "2021-12",
+      "description": "Enterprise software company specializing in adipiscing infrastructure",
+      "summary": "Managed cross-functional teams developing cutting-edge ut labore et dolore magna aliqua solutions for enterprise clients.",
+      "location": "Dolor Valley, CA",
+      "highlights": [
+        "Delivered 5 major Lorem projects on time and under budget",
+        "Established Ipsum best practices adopted company-wide",
+        "Mentored 20+ junior developers in dolor methodologies",
+        "Increased system efficiency by 60% through consectetur optimization"
+      ]
+    },
+    {
+      "name": "Adipiscing Solutions LLC",
+      "position": "Junior Lorem Developer",
+      "url": "https://www.adipiscing-solutions.com",
+      "startDate": "2019-01",
+      "endDate": "2020-05",
+      "description": "Boutique consultancy focused on elit sed do eiusmod implementations",
+      "summary": "Contributed to development of enim ad minim veniam systems and quis nostrud exercitation ullamco laboris applications.",
+      "location": "Ipsum Beach, FL",
+      "highlights": [
+        "Developed 10+ Lorem ipsum modules for production systems",
+        "Participated in dolor sit amet code reviews and quality assurance",
+        "Implemented consectetur features improving user experience by 35%",
+        "Collaborated on adipiscing elit project winning industry award"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Lorem for Good Foundation",
+      "position": "Technical Advisor",
+      "url": "https://www.loremforgood.org",
+      "startDate": "2020-01",
+      "endDate": "",
+      "summary": "Providing technical expertise to help non-profits leverage Lorem Ipsum technologies for social impact.",
+      "highlights": [
+        "Mentored 50+ students in Lorem programming",
+        "Built dolor management system for local food bank",
+        "Organized consectetur hackathon raising $100K for charity",
+        "Developed adipiscing platform connecting volunteers with opportunities"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "name": "Advanced Lorem Ipsum: A Comprehensive Guide to Dolor Sit Amet",
+      "publisher": "Journal of Consectetur Studies",
+      "releaseDate": "2023-03",
+      "url": "https://journal.consectetur.org",
+      "summary": "Peer-reviewed article examining the evolution and future of Lorem Ipsum methodologies in modern adipiscing elit systems."
+    },
+    {
+      "name": "Optimizing Sed Do Eiusmod: Performance Patterns in Tempor Incididunt",
+      "publisher": "International Lorem Review",
+      "releaseDate": "2022-11",
+      "url": "https://ilr.lorem.edu",
+      "summary": "Research paper presenting novel approaches to ut labore et dolore magna aliqua optimization."
+    },
+    {
+      "name": "The Future of Consectetur: Trends in Adipiscing Technology",
+      "publisher": "Tech Lorem Quarterly",
+      "releaseDate": "2022-06",
+      "url": "https://techquarterly.lorem.com",
+      "summary": "Industry analysis of emerging enim ad minim veniam technologies and their potential impact."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Lorem Framework 2.0",
+      "description": "Open-source framework for building scalable Lorem Ipsum applications",
+      "highlights": [
+        "10K+ GitHub stars",
+        "Used by Fortune 500 companies",
+        "Reduced development time by 50%"
+      ],
+      "keywords": ["Lorem", "Framework", "Open Source", "Scalability"],
+      "startDate": "2021",
+      "endDate": "2023",
+      "url": "https://github.com/lorem-framework",
+      "roles": ["Lead Developer", "Architect"],
+      "entity": "Open Source Community",
+      "type": "application"
+    },
+    {
+      "name": "Ipsum Analytics Platform",
+      "description": "Real-time analytics solution for dolor sit amet data processing",
+      "highlights": [
+        "Processes 1B+ events daily",
+        "Sub-second query response time",
+        "ML-powered insights generation"
+      ],
+      "keywords": ["Analytics", "Big Data", "Machine Learning", "Real-time"],
+      "startDate": "2022",
+      "endDate": "",
+      "url": "https://www.ipsum-analytics.com",
+      "roles": ["Technical Lead", "Data Engineer"],
+      "entity": "Lorem Ipsum Corporation",
+      "type": "application"
+    },
+    {
+      "name": "Consectetur Mobile SDK",
+      "description": "Cross-platform SDK for adipiscing elit mobile development",
+      "highlights": [
+        "Supports iOS, Android, and Web",
+        "100K+ downloads",
+        "Featured in Lorem Developer Conference"
+      ],
+      "keywords": ["Mobile", "SDK", "Cross-platform", "Development"],
+      "startDate": "2020",
+      "endDate": "2021",
+      "url": "https://sdk.consectetur.dev",
+      "roles": ["Mobile Developer", "SDK Designer"],
+      "entity": "Consectetur Technologies",
+      "type": "library"
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2024-01-15T00:00:00",
+    "theme": "elegant"
+  },
+  "interests": [
+    {
+      "name": "Lorem Innovation",
+      "keywords": ["Emerging Lorem Tech", "Ipsum Research", "Dolor Trends", "Future of Consectetur"]
+    },
+    {
+      "name": "Adipiscing Arts",
+      "keywords": ["Creative Lorem", "Digital Ipsum", "Interactive Dolor", "Generative Consectetur"]
+    },
+    {
+      "name": "Sed Sports",
+      "keywords": ["Tempor Racing", "Incididunt Climbing", "Labore Cycling", "Dolore Swimming"]
+    },
+    {
+      "name": "Magna Hobbies",
+      "keywords": ["Aliqua Photography", "Enim Music", "Minim Cooking", "Veniam Travel"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Ut Enim Ad Minim",
+      "reference": "Lorem Ipsum has been an exceptional dolor sit amet professional who consistently delivers consectetur adipiscing elit results. Their ability to sed do eiusmod tempor incididunt is unmatched in the industry. I highly recommend them for any ut labore et dolore magna aliqua position."
+    },
+    {
+      "name": "Quis Nostrud Exercitation",
+      "reference": "During their time at Consectetur Technologies, Lorem Ipsum demonstrated exceptional ullamco laboris skills and innovative nisi ut aliquip thinking. They were instrumental in our ex ea commodo consequat transformation and would be a valuable asset to any organization."
+    },
+    {
+      "name": "Ullamco Laboris Nisi",
+      "reference": "As Lorem Ipsum's professor and mentor, I can attest to their exceptional duis aute irure dolor capabilities and dedication to reprehenderit in voluptate. They were among the top students in our program and have continued to excel in their professional career."
+    }
+  ]
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

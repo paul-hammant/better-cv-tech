@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - T'Challa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="cv-header">
+            <h1 id="name"></h1>
+            <div class="contact-details">
+                <span id="address"></span>
+                <span id="phone"></span>
+                <span id="email"></span>
+            </div>
+        </header>
+
+        <main class="cv-main">
+            <section class="statement">
+                <div id="personal-statement"></div>
+            </section>
+
+            <section class="skills-section" id="skills-container">
+                <!-- Skills will be rendered here -->
+            </section>
+
+            <div class="two-column">
+                <aside class="education-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <h2>Awards</h2>
+                    <div id="awards-list"></div>
+                </aside>
+
+                <section class="employment-section">
+                    <h2>Work Experience</h2>
+                    <div id="employment-list"></div>
+                </section>
+            </div>
+
+            <!-- Full-width employment continuation -->
+            <div id="employment-breakout"></div>
+
+            <section class="certificates-section">
+                <h2>Certificates</h2>
+                <div id="certificates-list"></div>
+            </section>
+
+            <section class="volunteer-section">
+                <h2>Volunteer Experience</h2>
+                <div id="volunteer-list"></div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Publications</h2>
+                <div id="publications-list"></div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-list"></div>
+            </section>
+
+            <section class="languages-section">
+                <h2>Languages</h2>
+                <div id="languages-list"></div>
+            </section>
+
+            <section class="interests-section">
+                <h2>Interests</h2>
+                <div id="interests-list"></div>
+            </section>
+
+            <section class="references-section">
+                <h2>References</h2>
+                <div id="references-list"></div>
+            </section>
+        </main>
+
+        <div class="controls">
+            <button id="print-btn" title="Print CV">🖨️</button>
+            <button id="toggle-edit" title="Toggle Edit Mode">✏️</button>
+        </div>
+    </div>
+
+    <script type="application/json" id="cv-data-json">
+{
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "T'Challa",
+        "label": "King of Wakanda & Advanced Technology Innovator",
+        "image": "",
+        "email": "tchalla@wakanda.gov",
+        "phone": "+260 555 PANTHER",
+        "url": "https://www.wakanda.gov",
+        "summary": "**King of Wakanda** and **Advanced Technology Innovator** with expertise in international relations, scientific research, and sustainable development. Leader of the world's most technologically advanced nation with a strong commitment to **global humanitarian efforts** and **technological progress**.\n\n**PhD in Physics** from Oxford University with specialization in **vibranium applications** and **sustainable energy systems**. Dedicated to balancing traditional African values with cutting-edge innovation for the benefit of humanity.",
+        "location": {
+            "address": "Royal Palace",
+            "postalCode": "",
+            "city": "Birnin Zana",
+            "countryCode": "WK",
+            "region": "Wakanda"
+        },
+        "profiles": []
+    },
+    "work": [
+        {
+            "name": "Kingdom of Wakanda",
+            "position": "King and Head of State",
+            "url": "https://www.wakanda.gov",
+            "startDate": "2016-05",
+            "endDate": null,
+            "summary": "Constitutional monarch and head of government for the most technologically advanced nation on Earth, leading economic, technological, and social development initiatives.",
+            "highlights": [
+                "Opened Wakanda to international community while preserving sovereignty.",
+                "Established global outreach centers in Oakland, London, and Hong Kong.",
+                "Increased national GDP by 400% through strategic international partnerships.",
+                "Created universal healthcare system adopted by 20+ nations.",
+                "Led African Union initiatives for continental technological advancement."
+            ]
+        },
+        {
+            "name": "Wakanda Design Group",
+            "position": "Chief Technology Officer",
+            "url": "https://www.wakandatech.com",
+            "startDate": "2015-01",
+            "endDate": null,
+            "summary": "Leading research and development of vibranium-based technologies for medical, transportation, and communication applications worldwide.",
+            "highlights": [
+                "Developed vibranium-enhanced medical devices saving millions of lives.",
+                "Created clean energy systems reducing global carbon emissions by 12%.",
+                "Established technology sharing programs with developing nations.",
+                "Published 100+ peer-reviewed papers on advanced materials science.",
+                "Holds 200+ patents in sustainable technology applications."
+            ]
+        },
+        {
+            "name": "The Avengers",
+            "position": "Strategic Advisor & Field Operative",
+            "url": "https://www.avengers.org",
+            "startDate": "2016-04",
+            "endDate": null,
+            "summary": "Providing strategic counsel and participating in global crisis response operations as member of Earth's premier superhero team.",
+            "highlights": [
+                "Led successful defense against Thanos invasion of Earth.",
+                "Coordinated international response to extraterrestrial threats.",
+                "Developed advanced technology for global threat detection.",
+                "Trained international superhero teams in combat tactics.",
+                "Established protocols for alien technology management."
+            ]
+        },
+        {
+            "name": "Oxford University",
+            "position": "Visiting Professor of Physics",
+            "url": "https://www.ox.ac.uk",
+            "startDate": "2014-09",
+            "endDate": "2015-12",
+            "summary": "Teaching advanced physics courses and leading research initiatives in sustainable technology and materials science applications.",
+            "highlights": [
+                "Mentored 50+ graduate students in advanced physics research.",
+                "Established £10M endowment for sustainable technology research.",
+                "Published seminal research on vibranium molecular structure.",
+                "Created international exchange program with African universities."
+            ]
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "Global STEM Education Initiative",
+            "position": "Founder & Director",
+            "url": "",
+            "startDate": "",
+            "endDate": "",
+            "summary": "Committed to STEM education particularly for underrepresented communities worldwide. Establishes schools and scholarship programs, mentors young scientists.",
+            "highlights": []
+        },
+        {
+            "organization": "African Wildlife Conservation Alliance",
+            "position": "Leading Conservationist",
+            "url": "",
+            "startDate": "",
+            "endDate": "",
+            "summary": "Leading conservationist protecting African wildlife and ecosystems. Maintains extensive nature preserves and supports anti-poaching operations.",
+            "highlights": []
+        }
+    ],
+    "education": [
+        {
+            "institution": "Wakandan Royal Academy",
+            "url": "",
+            "area": "Leadership & Sciences",
+            "studyType": "Royal Education",
+            "startDate": "1990",
+            "endDate": "2005",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "Oxford University",
+            "url": "https://www.ox.ac.uk",
+            "area": "Physics",
+            "studyType": "Bachelor of Science",
+            "startDate": "2005",
+            "endDate": "2009",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "Oxford University",
+            "url": "https://www.ox.ac.uk",
+            "area": "Theoretical Physics",
+            "studyType": "Ph.D.",
+            "startDate": "2009",
+            "endDate": "2013",
+            "score": "",
+            "courses": []
+        },
+        {
+            "institution": "MIT",
+            "url": "https://www.mit.edu",
+            "area": "Advanced Materials Engineering",
+            "studyType": "Post-Doctoral Research",
+            "startDate": "2013",
+            "endDate": "2015",
+            "score": "",
+            "courses": []
+        }
+    ],
+    "awards": [
+        {
+            "title": "Nobel Prize in Physics",
+            "date": "2018",
+            "awarder": "Nobel Committee",
+            "summary": "Awarded **Nobel Prize in Physics** (2018) for groundbreaking research in vibranium applications and development of revolutionary clean energy technologies."
+        },
+        {
+            "title": "UN Humanitarian Leadership Award",
+            "date": "2020",
+            "awarder": "United Nations",
+            "summary": "Received **UN Humanitarian Leadership Award** (2020) for establishing global refugee assistance programs and sharing Wakandan medical technology worldwide."
+        },
+        {
+            "title": "Time Magazine Person of the Year",
+            "date": "2019",
+            "awarder": "Time Magazine",
+            "summary": "Named **Time Magazine Person of the Year** (2019) for leadership in global climate change initiatives and technological innovation for humanitarian purposes."
+        }
+    ],
+    "certificates": [
+        {
+            "name": "Rhodes Scholar",
+            "date": "2005",
+            "issuer": "Rhodes Trust",
+            "url": ""
+        }
+    ],
+    "publications": [],
+    "skills": [
+        {
+            "name": "Leadership & Governance",
+            "level": "Expert",
+            "keywords": ["Constitutional Monarchy", "International Relations", "Diplomatic Protocol", "Economic Development", "Policy Making"]
+        },
+        {
+            "name": "Scientific Research",
+            "level": "Expert",
+            "keywords": ["Theoretical Physics", "Materials Science", "Sustainable Energy", "Vibranium Applications", "Nanotechnology"]
+        },
+        {
+            "name": "Technology Innovation",
+            "level": "Expert",
+            "keywords": ["Advanced Materials", "Clean Energy Systems", "Medical Technology", "Sustainable Development", "Patent Development"]
+        },
+        {
+            "name": "Combat & Strategy",
+            "level": "Expert",
+            "keywords": ["African Martial Arts", "Modern Combat Techniques", "Strategic Planning", "Crisis Response", "Team Leadership"]
+        },
+        {
+            "name": "Cultural Arts",
+            "level": "Advanced",
+            "keywords": ["Traditional Drumming", "African Dance", "Cultural Preservation", "Artistic Heritage", "Performance Arts"]
+        }
+    ],
+    "languages": [
+        {
+            "language": "Wakandan",
+            "fluency": "Native"
+        },
+        {
+            "language": "English",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "Swahili",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "Hausa",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "Arabic",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "French",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "12+ Languages",
+            "fluency": "Various levels"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Traditional African Arts",
+            "keywords": ["Traditional Drumming", "African Dance", "Cultural Arts", "Artistic Heritage", "Cultural Festivals", "Cultural Preservation"]
+        },
+        {
+            "name": "Technological Innovation",
+            "keywords": ["Sustainable Technology", "Medical Applications", "Advanced Materials", "Humanitarian Technology", "Disaster Relief"]
+        },
+        {
+            "name": "Wildlife Conservation",
+            "keywords": ["African Wildlife", "Ecosystem Protection", "Nature Preserves", "Anti-poaching", "Conservation Biology"]
+        },
+        {
+            "name": "Martial Arts & Combat Training",
+            "keywords": ["African Martial Arts", "Combat Techniques", "Physical Conditioning", "Spiritual Discipline", "Self-defense Training"]
+        },
+        {
+            "name": "International Diplomacy",
+            "keywords": ["Global Peace Initiatives", "Cultural Exchange", "International Conferences", "Technology Development", "Cross-cultural Communication"]
+        },
+        {
+            "name": "Education & Mentorship",
+            "keywords": ["STEM Education", "Scholarship Programs", "Young Scientists", "Technological Literacy", "Developing Nations"]
+        }
+    ],
+    "references": [
+        {
+            "name": "Nakia",
+            "reference": "Head of Wakandan Intelligence & International Relations"
+        },
+        {
+            "name": "Okoye",
+            "reference": "General of Dora Milaje & Head of Security"
+        },
+        {
+            "name": "Shuri",
+            "reference": "Sister, Princess, and Chief Technology Innovation Officer"
+        },
+        {
+            "name": "Ramonda",
+            "reference": "Queen Mother and Senior Advisor"
+        }
+    ],
+    "projects": []
+}
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
