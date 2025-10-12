@@ -29,7 +29,7 @@ Limitation: the style of the resume is fixed, wheras JsonResume's portal details
 
 ## Seeing example Resumes/CVs
 
-1. See [./index.html] to see the gallery of fictional character's CVs/resumes.
+1. See [GH Pages site](https://paul-hammant.github.io/better-cv-tech/) to see the gallery of fictional character's CVs/resumes.
 2. Or open any individual CV/Resume file directly
 3. Click the ✏️ button to enter edit mode for that contrace/expand interactive feature
 4. Use 🖨️ button or Ctrl+P to print/save as PDF
