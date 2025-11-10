@@ -851,154 +851,494 @@ a[target="_blank"]:not([href^="mailto:"]):after {
 @media print {
     body {
         background: white;
-        font-size: 12pt;
-        line-height: 1.4;
+        font-size: 11pt;
+        line-height: 1.5;
+        color: #000;
+        margin: 0;
+        padding: 0;
     }
-    
+
     #app {
         box-shadow: none;
-        margin: 0;
+        margin: 0.4in 0.5in;
         padding: 0;
         max-width: none;
     }
-    
+
     .controls {
-        display: none;
+        display: none !important;
     }
-    
+
     /* Hide toggle buttons in print */
     .toggle-btn {
         display: none !important;
     }
-    
-    
-    /* For other hidden items, show abbreviated version */
-    .education-item.hidden .qual-content::after,
-    .employment-item.hidden .job-description::after,
-    .achievement-item.hidden .achievement-description::after {
-        content: " [Hidden in edit mode]";
-        font-style: italic;
-        color: #666;
-    }
-    
+
+    /* Hide completely collapsed items in print - they were intentionally collapsed */
     .education-item.hidden,
     .employment-item.hidden,
-    .achievement-item.hidden {
-        opacity: 0.6;
+    .achievement-item.hidden,
+    .publication-item.hidden,
+    .project-item.hidden,
+    .interest-item.hidden {
+        display: none !important;
     }
-    
+
+    /* Header styling */
     .cv-header {
-        padding: 20px 0;
-        margin-bottom: 20px;
+        padding: 0 0 15pt 0;
+        margin-bottom: 20pt;
+        border-bottom: 2pt solid #000;
+        page-break-after: avoid;
     }
-    
+
     .cv-header h1 {
-        font-size: 2.5rem;
+        font-size: 22pt;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 10pt;
+        line-height: 1.2;
     }
-    
-    .statement div {
-        background: transparent;
-        border: 1px solid #ccc;
-        padding: 15px;
-    }
-    
-    .two-column {
-        grid-template-columns: 1fr 2fr;
-        gap: 20px;
-    }
-    
-    .education-item,
-    .employment-item {
-        border: 1px solid #ddd;
-        margin-bottom: 15px;
-        padding: 15px;
-        background: transparent;
-        break-inside: avoid;
-    }
-    
-    .education-item:hover,
-    .employment-item:hover {
-        transform: none;
-        box-shadow: none;
-    }
-    
-    h2 {
-        color: black;
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-    }
-    
-    .skills-section {
-        page-break-inside: avoid;
-        margin-bottom: 20px;
-    }
-    
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+    .contact-details {
+        font-size: 10pt;
+        color: #000;
         gap: 15px;
     }
-    
-    .skill-category {
-        border: 1px solid #ddd;
-        break-inside: avoid;
-        padding: 10px;
+
+    .contact-details span::after {
+        color: #000 !important;
     }
-    
+
+    /* Statement section */
+    .statement {
+        page-break-inside: avoid;
+        margin-bottom: 18pt;
+    }
+
+    .statement div {
+        background: #f5f5f5;
+        border-left: 3pt solid #000;
+        padding: 12pt;
+        font-size: 11pt;
+        line-height: 1.5;
+        color: #000;
+    }
+
+    /* Section headers */
+    h2 {
+        color: #000;
+        font-size: 14pt;
+        font-weight: 600;
+        margin-top: 18pt;
+        margin-bottom: 10pt;
+        padding-bottom: 6pt;
+        border-bottom: 1.5pt solid #000;
+        page-break-after: avoid;
+    }
+
+    /* Skills section */
+    .skills-section {
+        page-break-inside: avoid;
+        margin-bottom: 18pt;
+    }
+
+    .skills-section h2 {
+        margin-top: 0;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10pt;
+    }
+
+    .skill-category {
+        border: 1pt solid #333;
+        background: #fafafa;
+        padding: 8pt;
+        break-inside: avoid;
+    }
+
     .skill-category:hover {
         transform: none;
         box-shadow: none;
     }
-    
-    
-    .references-section {
-        padding-top: 20px;
+
+    .skill-category-title {
+        color: #000;
+        font-size: 10pt;
+        font-weight: 600;
     }
-    
-    .certificate-item,
+
+    .skills-list {
+        color: #222;
+        font-size: 9.5pt;
+        line-height: 1.4;
+    }
+
+    /* Two column layout */
+    .two-column {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20pt;
+        margin-bottom: 18pt;
+    }
+
+    /* Education and awards */
+    .education-section {
+        page-break-inside: avoid;
+    }
+
+    .education-item,
+    .achievement-item {
+        border: 1pt solid #333;
+        margin-bottom: 12pt;
+        padding: 10pt;
+        background: #fafafa;
+        break-inside: avoid;
+    }
+
+    .education-item:hover,
+    .achievement-item:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .qual-content {
+        font-size: 10.5pt;
+        font-weight: 500;
+        color: #000;
+        margin-bottom: 6pt;
+    }
+
+    .qual-establishment {
+        font-size: 9.5pt;
+        color: #333;
+    }
+
+    .achievement-title {
+        font-size: 11pt;
+        font-weight: 600;
+        color: #000;
+    }
+
+    .achievement-description {
+        font-size: 10pt;
+        color: #222;
+        line-height: 1.5;
+    }
+
+    /* Employment section */
+    .employment-section {
+        page-break-inside: auto;
+    }
+
+    .employment-item {
+        border: 1pt solid #333;
+        margin-bottom: 12pt;
+        padding: 10pt;
+        background: #fafafa;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .employment-item:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .employment-continuation {
+        font-size: 10pt;
+        color: #000;
+        margin-bottom: 12pt;
+        padding: 8pt;
+        background: #f0f0f0;
+        border-left: 3pt solid #000;
+    }
+
+    .single-position-title {
+        font-size: 11.5pt;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 8pt;
+        line-height: 1.3;
+    }
+
+    .position-name {
+        color: #000;
+    }
+
+    .company-name {
+        color: #000;
+        font-weight: 600;
+    }
+
+    .job-dates {
+        font-size: 9.5pt;
+        color: #333;
+        float: right;
+    }
+
+    .job-description {
+        font-size: 10pt;
+        color: #222;
+        line-height: 1.5;
+        margin: 8pt 0;
+    }
+
+    .achievements {
+        margin-top: 8pt;
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+
+    .achievements li {
+        color: #222;
+        margin-bottom: 4pt;
+    }
+
+    .achievements li::before {
+        color: #000;
+    }
+
+    /* Full-width employment breakout */
+    #employment-breakout {
+        margin-top: 0;
+        margin-bottom: 18pt;
+    }
+
+    /* Certificates section */
+    .certificates-section {
+        page-break-inside: auto;
+        margin-bottom: 18pt;
+    }
+
+    #certificates-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10pt;
+    }
+
+    .certificate-item {
+        border: 1pt solid #333;
+        background: #fafafa;
+        padding: 10pt;
+        break-inside: avoid;
+        flex: none;
+    }
+
+    .certificate-name {
+        font-size: 10pt;
+        font-weight: 600;
+        color: #000;
+    }
+
+    .certificate-details {
+        font-size: 9pt;
+        color: #333;
+    }
+
+    /* Volunteer section */
+    .volunteer-section {
+        page-break-inside: auto;
+        margin-bottom: 18pt;
+    }
+
+    /* Publications section */
+    .publications-section {
+        page-break-inside: auto;
+        margin-bottom: 18pt;
+    }
+
+    .publication-item {
+        border: 1pt solid #333;
+        background: #fafafa;
+        padding: 10pt;
+        margin-bottom: 12pt;
+        break-inside: avoid;
+    }
+
+    .publication-item h3 {
+        font-size: 11pt;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 6pt;
+    }
+
+    .publication-meta {
+        font-size: 9.5pt;
+        color: #333;
+    }
+
+    .publication-summary {
+        font-size: 10pt;
+        color: #222;
+        line-height: 1.5;
+    }
+
+    /* Projects section */
+    .projects-section {
+        page-break-inside: auto;
+        margin-bottom: 18pt;
+    }
+
+    .project-item {
+        border: 1pt solid #333;
+        background: #fafafa;
+        padding: 10pt;
+        margin-bottom: 12pt;
+        break-inside: avoid;
+    }
+
+    .project-item h3 {
+        font-size: 11pt;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 6pt;
+    }
+
+    .project-description {
+        font-size: 10pt;
+        color: #222;
+        line-height: 1.5;
+        margin: 8pt 0;
+    }
+
+    .project-roles,
+    .project-keywords {
+        font-size: 9.5pt;
+        color: #333;
+    }
+
+    /* Languages section */
+    .languages-section {
+        page-break-inside: avoid;
+        margin-bottom: 18pt;
+    }
+
+    .languages-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8pt;
+    }
+
+    .languages-list li {
+        background: #fafafa;
+        border: 1pt solid #333;
+        padding: 8pt;
+        font-size: 10pt;
+        color: #000;
+    }
+
+    /* Interests section */
+    .interests-section {
+        page-break-inside: auto;
+        margin-bottom: 18pt;
+    }
+
+    .interest-item {
+        margin-bottom: 10pt;
+        break-inside: avoid;
+    }
+
+    .interest-item h3 {
+        font-size: 10.5pt;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 4pt;
+    }
+
+    .interest-keywords {
+        font-size: 9.5pt;
+        color: #333;
+    }
+
+    /* References section */
+    .references-section {
+        page-break-inside: auto;
+        margin-bottom: 0;
+    }
+
+    #references-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10pt;
+    }
+
     .reference-item {
-        border: 1px solid #ddd;
-        background: transparent;
+        border: 1pt solid #333;
+        background: #fafafa;
+        padding: 10pt;
+        break-inside: avoid;
+        flex: none;
+    }
+
+    .reference-name {
+        font-size: 10pt;
+        font-weight: 600;
+        color: #000;
+    }
+
+    .reference-details {
+        font-size: 9.5pt;
+        color: #222;
+        line-height: 1.5;
     }
 
     /* Print styles for links */
     a {
-        color: inherit;
+        color: #000;
         text-decoration: none;
     }
-    
-    /* Replace link text with cleaner format: hide original text, show "Type: URL" */
-    a[target="_blank"][rel="noopener noreferrer"]:not([href^="mailto:"]):not([href^="tel:"]) {
-        font-size: 0;
-        text-indent: -9999px;
+
+    /* Show URLs for external links in print */
+    a[href^="http"]:not([href*="mailto:"]):not([href*="tel:"])::after {
+        content: " (" attr(href) ")";
+        font-size: 8.5pt;
+        color: #555;
+        font-style: italic;
+        word-break: break-all;
     }
-    
-    a[target="_blank"][rel="noopener noreferrer"]:not([href^="mailto:"]):not([href^="tel:"]):after {
-        font-size: 0.9rem;
-        color: #666;
-        font-style: normal;
-        display: inline !important;
-        text-indent: 0;
-        content: "Link: " attr(href);
+
+    /* Email and phone links - keep them simple */
+    a[href^="mailto:"],
+    a[href^="tel:"] {
+        color: #000;
     }
-    
-    /* More specific content based on context - projects */
-    .project-item a[target="_blank"][rel="noopener noreferrer"]:after {
-        content: "Project: " attr(href);
+
+    /* Contact details links - don't show URLs */
+    .contact-details a[href^="http"]::after {
+        content: none;
     }
-    
-    /* Publications */
-    .publication-item a[target="_blank"][rel="noopener noreferrer"]:after {
-        content: "Publication: " attr(href);
+
+    /* Hide external link indicators */
+    a[target="_blank"]::after {
+        content: none !important;
     }
-    
-    /* Certificates */
-    .certificate-item a[target="_blank"][rel="noopener noreferrer"]:after {
-        content: "Certificate: " attr(href);
+
+    /* Prevent orphans and widows */
+    p, li, div {
+        orphans: 3;
+        widows: 3;
     }
-    
-    /* Hide external link arrows for other links (like LinkedIn, GitHub profiles) */
-    .contact-details a[target="_blank"]:after,
-    a[target="_blank"]:not([rel="noopener noreferrer"]):after {
-        display: none;
+
+    /* Page break controls */
+    h2, h3 {
+        page-break-after: avoid;
+    }
+
+    /* Ensure proper spacing between major sections */
+    .skills-section,
+    .two-column,
+    #employment-breakout,
+    .certificates-section,
+    .volunteer-section,
+    .publications-section,
+    .projects-section,
+    .languages-section,
+    .interests-section,
+    .references-section {
+        page-break-before: auto;
     }
 }
