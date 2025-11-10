@@ -983,6 +983,7 @@ a[target="_blank"]:not([href^="mailto:"]):after {
         grid-template-columns: 1fr 2fr;
         gap: 20pt;
         margin-bottom: 18pt;
+        page-break-inside: avoid;
     }
 
     /* Education and awards */
