@@ -196,7 +196,7 @@ MIT - Use freely for your own CVs/Resumes!
 
 ## Credits
 
-This project demonstrates the modernization of Colin Cook's [XML/XSLT-based CV system](https://github.com/colinccook/cv)XML/XSLT-based CV system 
+This project demonstrates the modernization of Colin Cook's [XML/XSLT-based CV system](https://github.com/colinccook/cv) 
 into a responsive, interactive single-page application using vanilla JavaScript. The "Donald Duck" resume data and rendered HTML of the same 
-were the starting point, but hours after starting I discovered the excellent JsonResume technology so pivoted to that schema rather than an AI 
-inferred one from Donald Duck's resume.
+were the starting point, but hours after starting I discovered the excellent JSON-Resume technology so pivoted to that schema rather than an AI 
+inferred one from Donald Duck's resume (featured in Colin Cook's final version).
