@@ -110,10 +110,14 @@ The JSON Resume schema stores text as plain strings, but this implementation sup
 - Visual feedback with animations and opacity changes
 
 ### Print Optimization
-- Decent layout with proper typography
-- URLs displayed for external links (Project: https://example.com)
-- Clean formatting optimized for ATS systems
-- Responsive column layouts that adapt to  print
+- Professional layout with high-quality typography (11pt base, 1.5 line height)
+- Proper page margins (0.5 inch) to prevent content cut-off
+- High-contrast black text and dark borders for excellent print visibility
+- URLs displayed in parentheses for external links
+- Smart page break controls to prevent awkward breaks
+- Clean formatting optimized for ATS systems and professional printing
+- Responsive column layouts that adapt to print
+- Works with both Letter (US) and A4 (International) paper sizes
 
 ## PDF Download Options
 
