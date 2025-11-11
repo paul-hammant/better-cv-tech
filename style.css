@@ -1308,15 +1308,7 @@ a[target="_blank"]:not([href^="mailto:"]):after {
         color: #000;
     }
 
-    /* Contact details links - don't show URLs */
-    .contact-details a[href^="http"]::after {
-        content: none;
-    }
-
-    /* Hide external link indicators */
-    a[target="_blank"]::after {
-        content: none !important;
-    }
+    /* External link indicators are not used in print mode */
 
     /* Prevent orphans and widows */
     p, li, div {
